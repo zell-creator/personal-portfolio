@@ -84,44 +84,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   overflow:hidden;
   min-height:clamp(475px,59.9vw,700px);
   color:white;
-  background:#022c3b
-}
-.hero-texture,.hero-technology {
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:-2
-}
-.hero-texture {
-  background:linear-gradient(110deg,#07394f88,#012d3acc),url('assets/backgrounds/teal-texture-original.webp') center/cover
-}
-.hero-technology {
-  top:13%;
-  background:url('assets/backgrounds/technology-original.webp') center/cover;
-  opacity:.32;
-  mix-blend-mode:screen
-}
-.hero-shell:after {
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:-1;
-  background:linear-gradient(90deg,#03313d66 0%,#03313d00 72%),radial-gradient(ellipse at 22% 100%,#86c6d366,transparent 46%)
-}
-.hero-monitor {
-  position:absolute;
-  width:64%;
-  max-width:895px;
-  right:0;
-  top:15%;
-  height:auto;
-  z-index:-1;
-  opacity:.37;
-  filter:grayscale(.8);
-  clip-path:inset(0 0 19% 0);
-  mix-blend-mode:luminosity;
-  pointer-events:none
+  background:#022c3b url('assets/backgrounds/hero-bg.jpg') center/cover no-repeat
 }
 .site-header {
   color: #fff;
@@ -523,8 +486,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
 .timeline-marker {
   width:46px;
   height:43px;
-  background:#bdebf0;
-  clip-path:polygon(0 0,100% 0,54% 100%,41% 100%,32% 50%);
+  background:url('assets/icons/arrow.png') center/contain no-repeat;
   margin-top:4px;
   align-self:start
 }
@@ -904,15 +866,6 @@ body.lightbox-open {
     width:82px;
     height:3px;
     margin:42px 0 24px
-  }
-  .hero-monitor {
-    width:100%;
-    top:25%;
-    right:-23%;
-    opacity:.28
-  }
-  .hero-technology {
-    opacity:.25
   }
   .services-grid {
     grid-template-columns:1fr;

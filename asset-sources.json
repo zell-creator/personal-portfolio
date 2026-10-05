@@ -78,5 +78,17 @@
   "regeneratedLogos": [
     "Tyrant CNC",
     "Slatter Law Firm"
+  ],
+  "requestedAssets": [
+    {
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/hero-bg.jpg",
+      "file": "dist/assets/backgrounds/hero-bg.jpg",
+      "usage": "Hero background, supplied JPEG preserved byte-for-byte"
+    },
+    {
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/arrow.png",
+      "file": "dist/assets/icons/arrow.png",
+      "usage": "Experience timeline arrows, supplied transparent PNG preserved byte-for-byte"
+    }
   ]
 }
