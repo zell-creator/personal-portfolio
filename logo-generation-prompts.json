@@ -1,0 +1,22 @@
+{
+  "mode": "Built-in image_gen",
+  "assets": [
+    {
+      "path": "/private/tmp/portfolio-logo-assets/tyrantnc-sharp.png",
+      "dimensions": "1254 \u00d7 1254",
+      "prompt": "Use case: precise-object-edit\nAsset type: sharp raster company-logo badge for a portfolio\nInput image: the supplied Tyrant reference is the exact edit target.\nPrimary request: Reconstruct this existing tiny logo badge faithfully at high resolution, a square 1024 by 1024 raster. Preserve the exact gold angular mark geometry, stroke widths, proportions, position, and original colors. The mark is the stacked angular mountain/chevron emblem visible in the reference: its outline peaks high centrally and descends toward the lower left and lower right, with the interior angular chevron exactly as drawn. Follow the image rather than interpreting the name.\nScene/backdrop: preserve the near-black rounded-square background and its exact corner curvature and placement from the reference. Keep any exterior corner transparency present in the source.\nStyle/medium: clean, flat, sharply edged logo raster with smooth antialiasing.\nConstraints: This is faithful restoration, with only resolution and edge clarity improved. No redesign, new lettering, captions, new details, extra lines, shadows, glow, gradients, dimensional effects, or watermark. Preserve the same padding, alignment and gold hue as the original.",
+      "fidelityLimitations": "Gold is somewhat brighter, line corners are slightly rounded, and the output introduces transparent outer padding. Exact geometry is not guaranteed from the tiny reference."
+    },
+    {
+      "path": "/private/tmp/portfolio-logo-assets/slattlerlawfirm-sharp.png",
+      "dimensions": "1254 \u00d7 1254",
+      "prompt": "Use case: precise-object-edit\nAsset type: sharp raster company-logo badge for a portfolio\nInput image: the supplied Slattler reference is the exact edit target.\nPrimary request: Reconstruct this existing tiny logo badge faithfully at high resolution, a square 1024 by 1024 raster. Preserve the exact thin white geometric wolf-head linework visible in the reference, including every triangle, ear, eye, muzzle, cheek and lower vertex. Keep the same proportions, relative line widths, geometry, symmetry, position, white color and padding; use the reference image as the sole design authority.\nScene/backdrop: preserve the original flat dark-navy rounded-square background, same color and corner curvature. Keep any exterior corner transparency present in the source.\nStyle/medium: clean flat logo raster with very crisp thin white edges and smooth antialiasing.\nConstraints: faithful restoration with only resolution and edge clarity improved. No redesign, new lettering, captions, added or removed facets, extra lines, decoration, shadows, glow, gradients, dimensional effects, or watermark.",
+      "fidelityLimitations": "Line weights and facets are subtly changed. Background shows dark/transparent-looking patches near lower left and lower right, and transparent outer padding is added. Exact geometry is not guaranteed from the tiny reference."
+    }
+  ],
+  "slatterBackgroundRepairPrompt": "Use case: precise-object-edit\nInput image: Slattler sharp logo is the exact edit target.\nPrimary request: Change only the navy background inside the existing rounded-square badge. Replace every interior background pixel, including the ugly black/transparent holes and darker patches near the lower left and lower right corners, with a perfectly uniform solid dark navy color #10283c. No texture, gradient, shadows, spots, holes or lighting variation anywhere inside the badge.\nInvariants: Preserve every white wolf line exactly as in the input: identical vertices, facet geometry, line thickness, eye triangles, nose, position, scale and sharp antialiasing. Do not redraw, reshape or alter any white pixels. Preserve the existing rounded-square silhouette, corner radius, canvas dimensions and transparent area outside the badge. Outside is genuinely transparent; all non-white areas inside the rounded square are fully opaque #10283c.\nConstraints: background repair only. No additional artwork, text, captions, watermark or new lines.\n",
+  "activeOutputs": {
+    "Tyrant CNC": "dist/assets/logos/tyrantnc-regenerated.png",
+    "Slatter Law Firm": "dist/assets/logos/slatterlawfirm-regenerated.png"
+  }
+}

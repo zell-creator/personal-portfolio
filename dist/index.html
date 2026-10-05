@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#03343e">
+  <meta name="description" content="Russel A. Valdez — project manager, web developer and web designer. 20+ years creating digital experiences and leading web projects across industries.">
+  <title>Russel A. Valdez | Web Design & Project Management</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2303343e'/%3E%3Cpath d='M13 17h17q12 0 12 10 0 7-7 10l12 12H34L22 36v13h-9zm9 8v5h8q3 0 3-3t-3-2z' fill='%23b3f1f3'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="portfolio-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header container">
+      <div class="identity">
+        <p class="name">RUSSEL A. VALDEZ</p>
+        <p class="profession">PROJECT MANAGER – WEB DEVELOPER – WEB DESIGNER</p>
+      </div>
+      <nav class="header-actions" aria-label="Professional links">
+        <a class="cv-button" href="assets/resume/Russel_Valdez_Resume-compressed.pdf" download="Russel_Valdez_Resume-compressed.pdf">VIEW CV</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/russel-a-valdez/" target="_blank" rel="noopener noreferrer" aria-label="Russel A. Valdez on LinkedIn (opens in a new tab)"><img src="assets/logos/linkedin-original.png" width="32" height="32" alt="LinkedIn"></a>
+      </nav>
+    </header>
+  <main id="main">
+  <div class="hero-shell">
+    <div class="hero-texture" aria-hidden="true"></div>
+    <div class="hero-technology" aria-hidden="true"></div>
+    <img class="hero-monitor" src="assets/backgrounds/monitor-original.webp" alt="" width="1536" height="1024" fetchpriority="high">
+      <section class="hero container" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span class="hero-lead">CREATIVE WEB DESIGN.</span><span class="hero-emphasis">RELIABLE PROJECT<br>DELIVERY.</span></h1>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-intro">20+ years creating digital experiences<br class="desktop-break"> and leading web projects across industries.</p>
+      </section>
+  </div>
+  <section class="services" aria-label="Services">
+    <div class="services-grid container">
+      <article class="service">
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M8 13h48v32H8z" stroke="currentColor" stroke-width="2.8"/><path d="M12 17h40v24H12z" fill="currentColor" opacity=".1"/><path d="M23 53h18M29 46v6h6v-6M17 57h30" stroke="currentColor" stroke-width="2.8"/></svg></div>
+        <h2>WEB DESIGN</h2>
+        <p>Modern, responsive websites that engage users and tell your story.</p>
+      </article>
+      <article class="service">
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="m28 4 8 0 2 6 6 2 6-3 6 6-3 6 2 6 5 2v8l-5 2-2 6 3 6-6 6-6-3-6 2-2 5h-8l-2-5-6-2-6 3-6-6 3-6-2-6-5-2v-8l5-2 2-6-3-6 6-6 6 3 6-2z"/><circle cx="32" cy="32" r="17" fill="#bce9eb"/></svg></div>
+        <h2>PROJECT MANAGEMENT</h2>
+        <p>Organized, transparent and people-focused project leadership from concept to launch.</p>
+      </article>
+      <article class="service">
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><circle cx="32" cy="19" r="10"/><circle cx="13" cy="22" r="8"/><circle cx="51" cy="22" r="8"/><path d="M16 49c0-12 7-20 16-20s16 8 16 20H16ZM1 46c0-10 5-16 12-16 4 0 6 1 8 3-5 3-8 7-9 13H1Zm50 0c-1-6-4-10-9-13 2-2 4-3 8-3 8 0 13 6 13 16H51Z"/></svg></div>
+        <h2>CLIENT RELATIONS</h2>
+        <p>Working closely with clients to understand goals and deliver effective solutions.</p>
+      </article>
+    </div>
+  </section>
+  <section class="featured" aria-labelledby="featured-title">
+    <div class="featured-layout container">
+      <div class="featured-copy">
+        <p class="eyebrow">FEATURED WORK<span aria-hidden="true"></span></p>
+        <h2 id="featured-title">FEATURED<br>PROJECTS</h2>
+        <p>Explore selected projects showcasing my work in web design, development, and digital marketing. Each reflects a focus on thoughtful solutions, strong user experiences, and meeting client goals.</p>
+        <div class="carousel-controls" role="group" aria-label="Featured project navigation">
+          <button class="round-button" id="previous-projects" type="button" aria-label="Scroll to previous projects" aria-controls="project-slider"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button>
+          <button class="round-button" id="next-projects" type="button" aria-label="Scroll to next projects" aria-controls="project-slider"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="slider" id="project-slider" role="region" aria-roledescription="carousel" aria-label="Featured projects. Select an image to view it full size." tabindex="0"></div>
+    </div>
+  </section>
+  <section class="latest" aria-labelledby="latest-title">
+    <div class="container">
+      <h2 id="latest-title">LATEST WEBSITES</h2>
+      <div class="website-grid" id="website-grid"></div>
+    </div>
+  </section>
+  <section class="experience" aria-labelledby="experience-title">
+    <div class="experience-layout container">
+      <div class="experience-copy">
+        <p class="eyebrow">EXPERIENCE<span aria-hidden="true"></span></p>
+        <h2 id="experience-title">WEB PROJECTS.<br>PEOPLE. PROGRESS.</h2>
+        <p>A combination of creative design, structured project management and strong client collaboration to deliver successful digital experiences.</p>
+      </div>
+      <ol class="timeline">
+        <li><span class="timeline-marker" aria-hidden="true"></span><div><h3>TLG Marketing</h3><p class="role">General Manager | 2020–2026</p><p>Leading web projects, managing a team and delivering digital solutions for clients.</p></div></li>
+        <li><span class="timeline-marker" aria-hidden="true"></span><div><h3>REAV Outsourcing</h3><p class="role">Owner / Founder | 2021–2026</p><p>Managing operations and client projects across multiple industries.</p></div></li>
+        <li><span class="timeline-marker" aria-hidden="true"></span><div><h3>20+ Years Web &amp; Digital Experience</h3><p>Extensive experience designing and managing web projects for nonprofits, small businesses and corporate clients.</p></div></li>
+        <li><span class="timeline-marker" aria-hidden="true"></span><div><h3>Web Team &amp; Platforms</h3><p>Web team grew from 6 to 8.<br>WordPress, Wix, HubSpot, Squarespace.</p></div></li>
+      </ol>
+    </div>
+  </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="platforms" aria-label="Platforms">
+        <li class="platform-wordpress"><img src="assets/logos/platform-wordpress-sharp.svg" width="32" height="32" alt="" loading="lazy"><span>WordPress</span></li>
+        <li class="platform-wix"><img src="assets/logos/platform-wix-sharp.svg" width="54" height="28" alt="Wix" loading="lazy"><span>Wix</span></li>
+        <li class="platform-hubspot"><img src="assets/logos/platform-hubspot-sharp.svg" width="32" height="32" alt="" loading="lazy"><span>HubSpot</span></li>
+        <li class="platform-squarespace"><img src="assets/logos/platform-squarespace-sharp.svg" width="32" height="32" alt="" loading="lazy"><span>Squarespace</span></li>
+        <li class="platform-shopify"><img src="assets/logos/platform-shopify-sharp.svg" width="32" height="32" alt="" loading="lazy"><span>Shopify</span></li>
+        <li class="platform-woocommerce"><img src="assets/logos/platform-woocommerce-sharp.svg" width="136" height="28" alt="WooCommerce" loading="lazy"><span>WooCommerce</span></li>
+      </ul>
+      <div class="footer-bottom">
+        <div class="identity"><p class="name">RUSSEL A. VALDEZ</p><p class="profession">PROJECT MANAGER – WEB DEVELOPER – WEB DESIGNER</p></div>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/russel-a-valdez/" target="_blank" rel="noopener noreferrer" aria-label="Russel A. Valdez on LinkedIn (opens in a new tab)"><img src="assets/logos/linkedin-original.png" width="36" height="36" alt="LinkedIn" loading="lazy"></a>
+      </div>
+    </div>
+  </footer>
+  <dialog class="lightbox" id="project-lightbox" aria-labelledby="lightbox-title" aria-describedby="lightbox-description">
+    <div class="lightbox-shell">
+      <header class="lightbox-header"><div><h2 id="lightbox-title"></h2><p id="lightbox-description"></p></div><button class="lightbox-close" type="button" aria-label="Close project viewer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+      <div class="lightbox-view" id="lightbox-view"><p class="lightbox-loading" id="lightbox-loading" role="status" hidden>Loading project…</p><img class="lightbox-image" id="lightbox-image" alt=""></div>
+      <footer class="lightbox-footer"><button class="lightbox-nav" id="lightbox-previous" type="button" aria-label="Previous project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg><span>Previous</span></button><div class="lightbox-meta"><p id="lightbox-count" aria-live="polite" aria-atomic="true"></p><a id="lightbox-live" target="_blank" rel="noopener noreferrer" hidden>Visit website ↗</a></div><button class="lightbox-nav" id="lightbox-next" type="button" aria-label="Next project"><span>Next</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5 7 7-7 7"/></svg></button></footer>
+    </div>
+  </dialog>
+</body>
+</html>

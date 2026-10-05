@@ -1,0 +1,5 @@
+Use case: precise-object-edit
+Input image: Slattler sharp logo is the exact edit target.
+Primary request: Change only the navy background inside the existing rounded-square badge. Replace every interior background pixel, including the ugly black/transparent holes and darker patches near the lower left and lower right corners, with a perfectly uniform solid dark navy color #10283c. No texture, gradient, shadows, spots, holes or lighting variation anywhere inside the badge.
+Invariants: Preserve every white wolf line exactly as in the input: identical vertices, facet geometry, line thickness, eye triangles, nose, position, scale and sharp antialiasing. Do not redraw, reshape or alter any white pixels. Preserve the existing rounded-square silhouette, corner radius, canvas dimensions and transparent area outside the badge. Outside is genuinely transparent; all non-white areas inside the rounded square are fully opaque #10283c.
+Constraints: background repair only. No additional artwork, text, captions, watermark or new lines.

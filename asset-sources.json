@@ -1,0 +1,82 @@
+{
+  "logos": [
+    {
+      "domain": "maryman.com",
+      "source": "https://maryman.com/wp-content/uploads/2023/03/Favicon.svg",
+      "file": "reference-assets/logos/maryman-original.svg",
+      "bytes": 848
+    },
+    {
+      "domain": "tlgmarketing.com",
+      "source": "https://www.tlgmarketing.com/wp-content/uploads/2022/10/cropped-tlg-logo-symbol-192x192.png",
+      "file": "dist/assets/logos/tlgmarketing-original.png",
+      "bytes": 18424
+    },
+    {
+      "domain": "mangancyber.com",
+      "source": "https://www.mangancyber.com/wp-content/uploads/2021/10/Mangan-Cyber-Logo-White-footer.svg",
+      "file": "dist/assets/logos/mangancyber-original.svg",
+      "bytes": 152428
+    },
+    {
+      "domain": "americanstrength.com",
+      "source": "https://americanstrength.com/wp-content/uploads/2026/01/Favicon-300x300.png",
+      "file": "dist/assets/logos/americanstrength-original.png",
+      "bytes": 103703
+    },
+    {
+      "domain": "placeinthyme.com",
+      "source": "https://placeinthyme.com/wp-content/uploads/2025/03/cropped-favicon-circle-192x192.png",
+      "file": "reference-assets/logos/placeinthyme-original.png",
+      "bytes": 7061
+    },
+    {
+      "domain": "primofitnessusa.com",
+      "source": "https://primofitnessusa.com/wp-content/uploads/2026/01/cropped-Primo-Fitness-Logo.png",
+      "file": "dist/assets/logos/primofitnessusa-original.png",
+      "bytes": 282349
+    },
+    {
+      "domain": "guaranty-escrow.com",
+      "source": "https://www.guaranty-escrow.com/wp-content/uploads/2025/04/favicon.png",
+      "file": "dist/assets/logos/guaranty-escrow-original.png",
+      "bytes": 1503
+    },
+    {
+      "domain": "effortlessoffice.com",
+      "source": "https://effortlessoffice.com/wp-content/uploads/2024/05/cropped-cropped-effortless_chevron_marigold1-180x180.png",
+      "file": "dist/assets/logos/effortlessoffice-original.png",
+      "bytes": 9902
+    },
+    {
+      "domain": "maxgripsystems.com",
+      "source": "https://maxgripsystems.com/wp-content/uploads/2023/04/Maxgrip-favicon.svg",
+      "file": "dist/assets/logos/maxgripsystems-original.svg",
+      "bytes": 3776
+    },
+    {
+      "domain": "manganinc.com",
+      "source": "https://manganinc.com/wp-content/uploads/2022/08/cropped-favicon-192x192.png",
+      "file": "dist/assets/logos/manganinc-original.png",
+      "bytes": 9884
+    },
+    {
+      "domain": "maryman.com",
+      "source": "https://maryman.com/wp-content/uploads/2023/03/Maryman-25th-logo.png",
+      "file": "dist/assets/logos/maryman-25th-badge.webp"
+    },
+    {
+      "domain": "placeinthyme.com",
+      "source": "https://placeinthyme.com/wp-content/uploads/2025/03/pit-logo-reupload.png",
+      "file": "dist/assets/logos/placeinthyme-wordmark-original.png"
+    }
+  ],
+  "platformMarks": "https://github.com/simple-icons/simple-icons",
+  "fonts": "https://fonts.google.com/",
+  "backgrounds": "Supplied original asset folder",
+  "projectImages": "21 supplied JPEG designs; thumbnails and larger lightbox WebP versions",
+  "regeneratedLogos": [
+    "Tyrant CNC",
+    "Slatter Law Firm"
+  ]
+}
