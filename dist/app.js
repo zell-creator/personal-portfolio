@@ -58,8 +58,8 @@
   const websiteCount = document.querySelector('#website-count');
   const websiteTabs = document.querySelector('#website-tabs');
   const websiteScrollRegion = document.querySelector('#website-scroll-region');
-  const websiteScrollHint = document.querySelector('#website-scroll-hint');
   const websitePreview = document.querySelector('#website-preview');
+  const websiteListColumn = document.querySelector('.website-list-column');
   const websitePreviewDomain = document.querySelector('#website-preview-domain');
   const websitePreviewMedia = document.querySelector('#website-preview-media');
   const websitePreviewPlaceholder = document.querySelector('#website-preview-placeholder');
@@ -116,22 +116,24 @@
     image.alt = site.previewAlt || `Website preview for ${site.name}`;
     image.decoding = 'async';
     image.loading = 'eager';
+    image.addEventListener('load', () => window.requestAnimationFrame(syncWebsitePreviewHeight), { once: true });
     image.addEventListener('error', () => {
       image.remove();
       websitePreviewMedia.hidden = true;
       websitePreviewPlaceholder.hidden = false;
+      window.requestAnimationFrame(syncWebsitePreviewHeight);
     }, { once: true });
     websitePreviewMedia.hidden = false;
     websitePreviewMedia.append(image);
   }
-  function updateWebsiteScrollState() {
-    const maxScroll = Math.max(0, websiteScrollRegion.scrollHeight - websiteScrollRegion.clientHeight);
-    const hasOverflow = maxScroll > 2;
-    const atBottom = !hasOverflow || websiteScrollRegion.scrollTop >= maxScroll - 2;
-    websiteScrollRegion.classList.toggle('has-overflow', hasOverflow);
-    websiteScrollRegion.classList.toggle('at-bottom', atBottom);
-    websiteScrollHint.hidden = !hasOverflow || atBottom;
-    websiteScrollHint.textContent = `⌄ Scroll to explore all ${websites.length} projects`;
+  const compactWebsiteLayout = window.matchMedia('(max-width: 800px)');
+  function syncWebsitePreviewHeight() {
+    if (compactWebsiteLayout.matches) {
+      websiteListColumn.style.removeProperty('height');
+      return;
+    }
+    const height = websitePreview.getBoundingClientRect().height;
+    if (height > 0) websiteListColumn.style.height = `${height}px`;
   }
   function renderWebsiteTabs(focusId = null) {
     websiteTabs.replaceChildren();
@@ -223,7 +225,7 @@
     });
 
     showWebsitePreview(selectedWebsite());
-    window.requestAnimationFrame(updateWebsiteScrollState);
+    window.requestAnimationFrame(syncWebsitePreviewHeight);
     if (focusId) {
       const focusTab = document.querySelector(`#website-tab-${websiteDomId(focusId)}`);
       focusTab?.focus();
@@ -235,10 +237,10 @@
     selectedWebsiteId = id;
     renderWebsiteTabs(moveFocus ? id : null);
   }
-  websiteScrollRegion.addEventListener('scroll', updateWebsiteScrollState, { passive: true });
   if ('ResizeObserver' in window) {
-    new ResizeObserver(updateWebsiteScrollState).observe(websiteScrollRegion);
+    new ResizeObserver(syncWebsitePreviewHeight).observe(websitePreview);
   }
+  compactWebsiteLayout.addEventListener('change', syncWebsitePreviewHeight);
   renderWebsiteTabs();
   document.querySelector('.cv-button').href = data.resume;
   document.querySelector('.cv-button').download = data.resume.split('/').pop();
