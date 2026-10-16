@@ -80,7 +80,9 @@
     if (!websiteListColumn) return;
 
     if (mobileWebsiteLayout.matches) {
-      websiteListColumn.style.height = 'auto';
+      const contentHeight = websiteTabs.scrollHeight;
+      const mobileMaxHeight = Math.min(480, window.innerHeight * 0.65);
+      websiteListColumn.style.height = `${Math.min(contentHeight, mobileMaxHeight)}px`;
       requestAnimationFrame(updateWebsiteListFade);
       return;
     }
