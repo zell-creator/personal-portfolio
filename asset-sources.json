@@ -90,5 +90,55 @@
       "file": "dist/assets/icons/arrow.png",
       "usage": "Experience timeline arrows, supplied transparent PNG preserved byte-for-byte"
     }
+  ],
+  "additionalProjectImages": [
+    {
+      "name": "Effortless \u2014 Fred Cooper bio",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/EOFF - FRED COOPER BIO PAGE.jpg",
+      "thumbnail": "dist/assets/projects/effortless-fred-cooper-bio.webp",
+      "fullImage": "dist/assets/projects/full/effortless-fred-cooper-bio.webp"
+    },
+    {
+      "name": "Kaufman Steinberg Law Firm",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/KSSLP-Home.jpg",
+      "thumbnail": "dist/assets/projects/kaufman-steinberg-home.webp",
+      "fullImage": "dist/assets/projects/full/kaufman-steinberg-home.webp"
+    },
+    {
+      "name": "Place in Thyme",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/PIT - Home.jpg",
+      "thumbnail": "dist/assets/projects/place-in-thyme-home.webp",
+      "fullImage": "dist/assets/projects/full/place-in-thyme-home.webp"
+    },
+    {
+      "name": "Slatter Law Firm",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/SLF-Home.jpg",
+      "thumbnail": "dist/assets/projects/slatter-law-firm-home.webp",
+      "fullImage": "dist/assets/projects/full/slatter-law-firm-home.webp"
+    },
+    {
+      "name": "Tyrant CNC blog",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/Tyrant Blog.jpg",
+      "thumbnail": "dist/assets/projects/tyrant-cnc-blog.webp",
+      "fullImage": "dist/assets/projects/full/tyrant-cnc-blog.webp"
+    },
+    {
+      "name": "Six String Consulting",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/6SC-Home.jpg",
+      "thumbnail": "dist/assets/projects/six-string-consulting-home.webp",
+      "fullImage": "dist/assets/projects/full/six-string-consulting-home.webp"
+    },
+    {
+      "name": "Aimey AI",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/Aimey AI - Home 2.jpg",
+      "thumbnail": "dist/assets/projects/aimey-ai-home.webp",
+      "fullImage": "dist/assets/projects/full/aimey-ai-home.webp"
+    },
+    {
+      "name": "PB HAUS",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/PBHAUS - Home.png",
+      "thumbnail": "dist/assets/projects/pb-haus-home.webp",
+      "fullImage": "dist/assets/projects/full/pb-haus-home.webp"
+    }
   ]
 }
