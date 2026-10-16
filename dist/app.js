@@ -58,13 +58,46 @@
   const websiteCount = document.querySelector('#website-count');
   const websiteTabs = document.querySelector('#website-tabs');
   const websiteScrollRegion = document.querySelector('#website-scroll-region');
+  const websiteListColumn = document.querySelector('.website-list-column');
   const websitePreview = document.querySelector('#website-preview');
   const websitePreviewDomain = document.querySelector('#website-preview-domain');
   const websitePreviewMedia = document.querySelector('#website-preview-media');
   const websitePreviewPlaceholder = document.querySelector('#website-preview-placeholder');
   const websitePlaceholderDomain = document.querySelector('#website-placeholder-domain');
   const websiteEmpty = document.querySelector('#website-empty');
+  const iPadWebsiteLayout = window.matchMedia('(min-width: 801px) and (max-width: 1366px) and (pointer: coarse)');
   let selectedWebsiteId = websites.length ? websiteId(websites[0]) : null;
+
+  function syncIPadWebsiteTabs() {
+    if (!websiteListColumn) return;
+    if (!iPadWebsiteLayout.matches) {
+      websiteListColumn.style.removeProperty('height');
+      return;
+    }
+
+    const availableHeight = websitePreview.getBoundingClientRect().height;
+    const items = [...websiteTabs.children];
+    if (!availableHeight || !items.length) return;
+
+    const gap = parseFloat(getComputedStyle(websiteTabs).rowGap) || 0;
+    let fittedHeight = 0;
+    for (const item of items) {
+      const itemHeight = item.getBoundingClientRect().height;
+      const nextHeight = fittedHeight + (fittedHeight ? gap : 0) + itemHeight;
+      if (fittedHeight && nextHeight > availableHeight) break;
+      fittedHeight = nextHeight;
+    }
+    websiteListColumn.style.height = `${Math.min(availableHeight, fittedHeight)}px`;
+  }
+
+  const scheduleIPadWebsiteTabsSync = () => requestAnimationFrame(syncIPadWebsiteTabs);
+  if ('ResizeObserver' in window) {
+    const websiteLayoutObserver = new ResizeObserver(scheduleIPadWebsiteTabsSync);
+    websiteLayoutObserver.observe(websitePreview);
+    websiteLayoutObserver.observe(websiteTabs);
+  }
+  iPadWebsiteLayout.addEventListener('change', scheduleIPadWebsiteTabsSync);
+  window.addEventListener('resize', scheduleIPadWebsiteTabsSync, { passive: true });
 
   function websiteId(site) {
     return String(site.id || site.url || site.name || '');
@@ -119,7 +152,9 @@
       image.remove();
       websitePreviewMedia.hidden = true;
       websitePreviewPlaceholder.hidden = false;
+      scheduleIPadWebsiteTabsSync();
     }, { once: true });
+    image.addEventListener('load', scheduleIPadWebsiteTabsSync, { once: true });
     websitePreviewMedia.hidden = false;
     websitePreviewMedia.append(image);
   }
@@ -211,6 +246,7 @@
     });
 
     showWebsitePreview(selectedWebsite());
+    scheduleIPadWebsiteTabsSync();
     if (focusId) {
       const focusTab = document.querySelector(`#website-tab-${websiteDomId(focusId)}`);
       focusTab?.focus();
