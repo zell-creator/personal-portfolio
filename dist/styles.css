@@ -1294,7 +1294,7 @@ body.lightbox-open {
 
 /* Live websites: fixed preview beside an independently scrolling tab list. */
 .latest {
-  --showcase-height: clamp(390px, 30.8vw, 400px);
+  --showcase-height: clamp(440px, 34.6vw, 450px);
 }
 .latest-header,
 .websites-showcase {
@@ -1485,7 +1485,8 @@ body.lightbox-open {
   transition: border-color .18s, background-color .18s, box-shadow .18s;
 }
 .website-item.is-active {
-  border-color: #59c5d4;
+  border: 2px solid #44d8eb;
+  border-radius: 22px;
   background: #ffffff85;
   box-shadow: 0 4px 15px #0d718615;
 }
@@ -1493,25 +1494,40 @@ body.lightbox-open {
   display: grid;
   width: 100%;
   min-height: 58px;
-  grid-template-columns: 34px 52px minmax(0, 1fr) 22px;
+  grid-template-columns: 44px minmax(0, 1fr) 34px 22px;
+  grid-template-areas: "logo name number toggle";
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 6px 11px;
   border: 0;
-  border-left: 5px solid transparent;
   background: transparent;
   color: #143f4d;
   text-align: left;
 }
-.website-tab[aria-selected="true"] { border-left-color: #075064; }
+.website-item.is-active .website-tab {
+  min-height: 106px;
+  grid-template-columns: 64px minmax(0, 1fr) 34px 22px;
+  grid-template-rows: auto auto;
+  grid-template-areas: "logo name number toggle" "logo description number toggle";
+  column-gap: 14px;
+  row-gap: 3px;
+  padding: 14px 13px 16px;
+}
 .website-tab:focus-visible { position: relative; z-index: 2; }
 .website-tab-number {
+  grid-area: number;
   color: #507986;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
+.website-item.is-active .website-tab-number,
+.website-item.is-active .website-tab-toggle {
+  align-self: start;
+  margin-top: 2px;
+}
 .website-tab-logo {
+  grid-area: logo;
   display: grid;
   width: 40px;
   height: 40px;
@@ -1526,12 +1542,25 @@ body.lightbox-open {
   object-fit: contain;
 }
 .website-tab-name {
+  grid-area: name;
   min-width: 0;
   overflow-wrap: anywhere;
-  font-size: clamp(13px, 1.25vw, 17px);
-  font-weight: 500;
+  font-size: clamp(15px, 1.45vw, 19px);
+  font-weight: 600;
+}
+.website-tab-description {
+  display: none;
+  grid-area: description;
+  min-width: 0;
+  color: #52727c;
+  font-size: clamp(13px, 1.15vw, 16px);
+  line-height: 1.35;
+}
+.website-item.is-active .website-tab-description {
+  display: block;
 }
 .website-tab-toggle {
+  grid-area: toggle;
   color: #0a5365;
   font-size: 24px;
   font-weight: 400;
@@ -1539,24 +1568,26 @@ body.lightbox-open {
   text-align: center;
 }
 .website-item-details {
-  padding: 0 14px 15px 109px;
-  color: #52727c;
-  font-size: 14px;
-  line-height: 1.45;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 14px;
+  padding: 11px 0 13px;
+  border-top: 1px solid #b8e9ee;
 }
-.website-item-details p { margin: 0 0 9px; }
 .website-item-details[hidden] { display: none; }
 .website-item-details a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #075b77;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #a9eaf0;
+  color: #073d4b;
   font-size: 15px;
   font-weight: 600;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
+  text-decoration: none;
 }
-.website-item-details a::after { content: "→"; font-size: 20px; line-height: 1; }
+.website-item-details a::after { content: "→"; font-size: 23px; line-height: 1; }
 .website-empty {
   display: grid;
   height: 100%;
@@ -1582,7 +1613,10 @@ body.lightbox-open {
   .projects-count-number { min-width: 36px; height: 26px; padding-inline: 7px; font-size: 13px; }
   .preview-browser-bar { min-height: 42px; padding-inline: 11px; }
   .preview-address { padding-block: 5px; font-size: 11px; }
-  .website-tab { grid-template-columns: 28px 44px minmax(0, 1fr) 20px; gap: 8px; padding-inline: 8px; }
-  .website-tab-logo { width: 40px; height: 40px; border-radius: 10px; }
-  .website-item-details { padding-left: 88px; font-size: 13px; }
+  .website-tab { grid-template-columns: 36px minmax(0, 1fr) 28px 20px; gap: 8px; padding-inline: 8px; }
+  .website-item.is-active .website-tab { grid-template-columns: 48px minmax(0, 1fr) 28px 20px; gap: 9px; }
+  .website-tab-logo { width: 36px; height: 36px; border-radius: 10px; }
+  .website-item.is-active .website-tab-logo { width: 48px; height: 48px; }
+  .website-tab-name { font-size: 15px; }
+  .website-item-details { margin-inline: 10px; }
 }

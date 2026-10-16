@@ -169,21 +169,19 @@
       const name = document.createElement('span');
       name.className = 'website-tab-name';
       name.textContent = site.name;
+      const description = document.createElement('span');
+      description.className = 'website-tab-description';
+      description.textContent = site.description || '';
       const toggle = document.createElement('span');
       toggle.className = 'website-tab-toggle';
       toggle.setAttribute('aria-hidden', 'true');
       toggle.textContent = selected ? '−' : '+';
-      tab.append(logoWrap, name, toggle);
+      tab.append(logoWrap, name, description, toggle);
 
       const details = document.createElement('div');
       details.className = 'website-item-details';
       details.id = `website-details-${domId}`;
       details.hidden = !selected;
-      if (site.description) {
-        const description = document.createElement('p');
-        description.textContent = site.description;
-        details.append(description);
-      }
       const url = websiteUrl(site.url);
       if (url) {
         const link = document.createElement('a');
