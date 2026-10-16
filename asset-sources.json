@@ -160,9 +160,9 @@
     },
     {
       "domain": "maryman.com",
-      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/maryman.com.jpg",
-      "file": "dist/assets/websites/maryman.com.jpg",
-      "usage": "Supplied website screenshot, copied byte-for-byte"
+      "source": "/var/folders/l7/673gkl614lgcxwwrfsdprqrr0000gn/T/codex-clipboard-8b67b4d2-47a2-4221-bc1f-87d04bc3402c.png",
+      "file": "dist/assets/websites/maryman.com.png",
+      "usage": "Supplied replacement website screenshot, copied byte-for-byte"
     },
     {
       "domain": "tyrantcnc.com",
