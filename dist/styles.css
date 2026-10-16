@@ -1506,7 +1506,7 @@ body.lightbox-open {
 }
 .website-item.is-active .website-tab {
   min-height: 106px;
-  grid-template-columns: 64px minmax(0, 1fr) 34px 22px;
+  grid-template-columns: 44px minmax(0, 1fr) 34px 22px;
   grid-template-rows: auto auto;
   grid-template-areas: "logo name number toggle" "logo description number toggle";
   column-gap: 14px;
@@ -1549,7 +1549,7 @@ body.lightbox-open {
   font-weight: 600;
 }
 .website-item.is-active .website-tab-name {
-  font-size: 18px;
+  font-size: 16px;
 }
 .website-tab-description {
   display: none;
