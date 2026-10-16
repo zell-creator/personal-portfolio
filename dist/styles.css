@@ -1548,6 +1548,9 @@ body.lightbox-open {
   font-size: clamp(9px, calc(1.45vw - 6px), 13px);
   font-weight: 600;
 }
+.website-item.is-active .website-tab-name {
+  font-size: 18px;
+}
 .website-tab-description {
   display: none;
   grid-area: description;
@@ -1558,6 +1561,7 @@ body.lightbox-open {
 }
 .website-item.is-active .website-tab-description {
   display: block;
+  font-size: 15px;
 }
 .website-tab-toggle {
   grid-area: toggle;
