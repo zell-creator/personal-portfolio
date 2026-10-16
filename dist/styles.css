@@ -1545,7 +1545,7 @@ body.lightbox-open {
   grid-area: name;
   min-width: 0;
   overflow-wrap: anywhere;
-  font-size: clamp(11px, calc(1.45vw - 4px), 15px);
+  font-size: clamp(9px, calc(1.45vw - 6px), 13px);
   font-weight: 600;
 }
 .website-tab-description {
@@ -1553,7 +1553,7 @@ body.lightbox-open {
   grid-area: description;
   min-width: 0;
   color: #52727c;
-  font-size: clamp(9px, calc(1.15vw - 4px), 12px);
+  font-size: clamp(7px, calc(1.15vw - 6px), 10px);
   line-height: 1.35;
 }
 .website-item.is-active .website-tab-description {
@@ -1583,7 +1583,7 @@ body.lightbox-open {
   border-radius: 999px;
   background: #a9eaf0;
   color: #073d4b;
-  font-size: 15px;
+  font-size: 11px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -1603,7 +1603,7 @@ body.lightbox-open {
   .websites-showcase { grid-template-columns: minmax(0, 1fr); gap: 15px; }
   .latest { --showcase-height: clamp(300px, 62vw, 440px); }
   .website-list-column { height: min(360px, 55vh); }
-  .website-tab-name { font-size: 16px; }
+  .website-tab-name { font-size: 14px; }
 }
 @media (max-width: 480px) {
   .latest-header { grid-template-columns: minmax(0, 1fr); gap: 10px; }
@@ -1617,6 +1617,6 @@ body.lightbox-open {
   .website-item.is-active .website-tab { grid-template-columns: 48px minmax(0, 1fr) 28px 20px; gap: 9px; }
   .website-tab-logo { width: 36px; height: 36px; border-radius: 10px; }
   .website-item.is-active .website-tab-logo { width: 48px; height: 48px; }
-  .website-tab-name { font-size: 11px; }
+  .website-tab-name { font-size: 9px; }
   .website-item-details { margin-inline: 10px; }
 }
