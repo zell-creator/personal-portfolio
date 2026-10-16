@@ -1505,12 +1505,13 @@ body.lightbox-open {
   text-align: left;
 }
 .website-item.is-active .website-tab {
+  align-content: start;
   min-height: 106px;
   grid-template-columns: 44px minmax(0, 1fr) 34px 22px;
   grid-template-rows: auto auto;
   grid-template-areas: "logo name number toggle" "logo description number toggle";
   column-gap: 14px;
-  row-gap: 3px;
+  row-gap: 22px;
   padding: 14px 13px 16px;
 }
 .website-tab:focus-visible { position: relative; z-index: 2; }
@@ -1557,12 +1558,12 @@ body.lightbox-open {
   min-width: 0;
   color: #52727c;
   font-size: clamp(7px, calc(1.15vw - 6px), 10px);
-  line-height: 1.35;
+  line-height: 20px;
 }
 .website-item.is-active .website-tab-description {
   display: block;
   font-size: 15px;
-  transform: translateY(-12px);
+  margin-top: -12px;
 }
 .website-tab-toggle {
   grid-area: toggle;
