@@ -1506,7 +1506,6 @@ body.lightbox-open {
 }
 .website-item.is-active .website-tab {
   align-content: start;
-  min-height: 106px;
   grid-template-columns: 44px minmax(0, 1fr) 34px 22px;
   grid-template-rows: auto auto;
   grid-template-areas: "logo name number toggle" "logo description number toggle";
