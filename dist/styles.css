@@ -1560,19 +1560,19 @@ body.lightbox-open {
   grid-area: name;
   min-width: 0;
   overflow-wrap: anywhere;
-  font-size: clamp(9px, 1.05vw, 16px);
+  font-size: clamp(12px, 1.2vw, 16px);
   line-height: 1.2;
   font-weight: 600;
 }
 .website-item.is-active .website-tab-name {
-  font-size: clamp(9px, 1.05vw, 16px);
+  font-size: clamp(12px, 1.2vw, 16px);
 }
 .website-tab-description {
   display: none;
   grid-area: description;
   min-width: 0;
   color: #52727c;
-  font-size: clamp(10px, 1.1vw, 15px);
+  font-size: clamp(12px, 1.2vw, 15px);
   line-height: 1.35;
 }
 .website-item.is-active .website-tab-description {
@@ -1641,9 +1641,9 @@ body.lightbox-open {
 @supports (font-size: 1cqw) {
   .website-tab-name,
   .website-item.is-active .website-tab-name {
-    font-size: clamp(9px, 3.1cqw, 16px);
+    font-size: clamp(12px, 4cqw, 16px);
   }
   .website-tab-description {
-    font-size: clamp(10px, 3.8cqw, 15px);
+    font-size: clamp(12px, 4cqw, 15px);
   }
 }
