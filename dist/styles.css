@@ -1307,19 +1307,20 @@ body.lightbox-open {
   margin-bottom: 18px;
 }
 .latest .latest-heading .eyebrow {
-  gap: 8px;
-  margin: 0 0 10px 2px;
+  gap: 30px;
+  margin: 5px 0 10px 5px;
   color: #164956;
-  font-size: clamp(10px, 1vw, 13px);
-  letter-spacing: .24em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: clamp(12px, 1.6vw, 16px);
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 .latest .latest-heading .eyebrow span {
-  display: inline;
-  width: auto;
-  height: auto;
-  max-width: none;
-  flex: none;
-  background: none;
+  height: 2px;
+  flex: 1;
+  background: #bae9ec;
+  max-width: 125px;
 }
 .latest h2 {
   margin: 0;
@@ -1406,14 +1407,14 @@ body.lightbox-open {
   min-height: 0;
   flex: 1;
   overflow: hidden;
-  background: #fff;
+  background: #eaf5f6;
 }
 .preview-media[hidden] { display: none; }
 .preview-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
 }
 .preview-placeholder {
   display: flex;
@@ -1599,7 +1600,7 @@ body.lightbox-open {
 }
 @media (max-width: 480px) {
   .latest-header { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-  .latest .latest-heading .eyebrow { font-size: 9px; letter-spacing: .15em; white-space: normal; }
+  .latest .latest-heading .eyebrow { white-space: normal; }
   .latest h2 { font-size: clamp(32px, 9vw, 42px); }
   .projects-count { justify-content: flex-start; gap: 7px; padding: 0 3px; font-size: 10px; letter-spacing: .14em; }
   .projects-count-number { min-width: 36px; height: 26px; padding-inline: 7px; font-size: 13px; }
