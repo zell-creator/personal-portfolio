@@ -84,7 +84,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   overflow:hidden;
   min-height:clamp(475px,59.9vw,700px);
   color:white;
-  background:#022c3b url('assets/backgrounds/hero-bg.jpg') center/cover no-repeat
+  background:#022c3b url('assets/backgrounds/hero-bg-enhanced.webp') center/cover no-repeat
 }
 .site-header {
   color: #fff;
@@ -486,7 +486,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
 .timeline-marker {
   width:46px;
   height:43px;
-  background:url('assets/icons/arrow.png') center/contain no-repeat;
+  background:url('assets/icons/arrow.svg') center/contain no-repeat;
   margin-top:4px;
   align-self:start
 }

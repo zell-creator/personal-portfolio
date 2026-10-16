@@ -83,12 +83,22 @@
     {
       "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/hero-bg.jpg",
       "file": "dist/assets/backgrounds/hero-bg.jpg",
-      "usage": "Hero background, supplied JPEG preserved byte-for-byte"
+      "usage": "Original hero background source, preserved byte-for-byte"
+    },
+    {
+      "source": "Generated from the supplied hero background",
+      "file": "dist/assets/backgrounds/hero-bg-enhanced.webp",
+      "usage": "Enhanced high-resolution version used as the hero background"
     },
     {
       "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/arrow.png",
       "file": "dist/assets/icons/arrow.png",
-      "usage": "Experience timeline arrows, supplied transparent PNG preserved byte-for-byte"
+      "usage": "Original supplied timeline arrow, preserved byte-for-byte"
+    },
+    {
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/arrow.png",
+      "file": "dist/assets/icons/arrow.svg",
+      "usage": "Vector recreation of the supplied timeline arrow for sharp scaling"
     }
   ],
   "additionalProjectImages": [
