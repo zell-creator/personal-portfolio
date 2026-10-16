@@ -1563,7 +1563,7 @@ body.lightbox-open {
 .website-item.is-active .website-tab-description {
   display: block;
   font-size: 15px;
-  margin-top: -12px;
+  margin-top: -19px;
 }
 .website-tab-toggle {
   grid-area: toggle;
