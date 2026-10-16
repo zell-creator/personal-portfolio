@@ -103,7 +103,7 @@
   ],
   "additionalProjectImages": [
     {
-      "name": "Effortless \u2014 Fred Cooper bio",
+      "name": "Effortless — Fred Cooper bio",
       "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/EOFF - FRED COOPER BIO PAGE.jpg",
       "thumbnail": "dist/assets/projects/effortless-fred-cooper-bio.webp",
       "fullImage": "dist/assets/projects/full/effortless-fred-cooper-bio.webp"
@@ -149,6 +149,80 @@
       "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/PBHAUS - Home.png",
       "thumbnail": "dist/assets/projects/pb-haus-home.webp",
       "fullImage": "dist/assets/projects/full/pb-haus-home.webp"
+    }
+  ],
+  "websitePreviews": [
+    {
+      "domain": "tlgmarketing.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/tlgmarketing.com.jpg",
+      "file": "dist/assets/websites/tlgmarketing.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "maryman.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/maryman.com.jpg",
+      "file": "dist/assets/websites/maryman.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "tyrantcnc.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/tyrantcnc.com.jpg",
+      "file": "dist/assets/websites/tyrantcnc.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "mangancyber.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/mangancyber.com.jpg",
+      "file": "dist/assets/websites/mangancyber.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "primofitnessusa.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/primofitnessusa.com.jpg",
+      "file": "dist/assets/websites/primofitnessusa.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "effortlessoffice.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/effortlessoffice.com.jpg",
+      "file": "dist/assets/websites/effortlessoffice.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "americanstrength.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/americanstrength.com.jpg",
+      "file": "dist/assets/websites/americanstrength.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "placeinthyme.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/placeinthyme.com.jpg",
+      "file": "dist/assets/websites/placeinthyme.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "guaranty-escrow.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/guaranty-escrow.com.jpg",
+      "file": "dist/assets/websites/guaranty-escrow.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "slatterlawfirm.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/slatterlawfirm.com.jpg",
+      "file": "dist/assets/websites/slatterlawfirm.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "maxgripsystems.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/maxgripsystems.com.jpg",
+      "file": "dist/assets/websites/maxgripsystems.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
+    },
+    {
+      "domain": "manganinc.com",
+      "source": "/Volumes/Expansion/Russel/Web Design/my-portfolio/New Portfolio/images/manganinc.com.jpg",
+      "file": "dist/assets/websites/manganinc.com.jpg",
+      "usage": "Supplied website screenshot, copied byte-for-byte"
     }
   ]
 }

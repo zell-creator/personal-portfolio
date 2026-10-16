@@ -69,8 +69,38 @@
   </section>
   <section class="latest" aria-labelledby="latest-title">
     <div class="container">
-      <h2 id="latest-title">LIVE WEBSITES</h2>
-      <div class="website-grid" id="website-grid"></div>
+      <div class="latest-header">
+        <div class="latest-heading">
+          <p class="eyebrow">CONCEPT 02 <span aria-hidden="true">•</span> SCROLLABLE PROJECT TABS</p>
+          <h2 id="latest-title">LIVE WEBSITES</h2>
+        </div>
+        <div class="projects-count" aria-label="Live website project count">
+          <span>PROJECTS</span>
+          <span id="website-count" class="projects-count-number">0</span>
+        </div>
+      </div>
+      <div class="websites-showcase">
+        <div class="website-preview" id="website-preview" role="tabpanel" tabindex="0" aria-label="Selected website preview" aria-live="polite">
+          <div class="preview-browser-bar" aria-hidden="true">
+            <span class="browser-dots"><i></i><i></i><i></i></span>
+            <span class="preview-address" id="website-preview-domain"></span>
+            <span class="preview-refresh" aria-hidden="true">↻</span>
+          </div>
+          <div class="preview-media" id="website-preview-media"></div>
+          <div class="preview-placeholder" id="website-preview-placeholder" hidden>
+            <span class="preview-placeholder-mark" aria-hidden="true">↗</span>
+            <strong>Preview coming soon</strong>
+            <span id="website-placeholder-domain"></span>
+          </div>
+        </div>
+        <div class="website-list-column">
+          <div class="website-scroll-region" id="website-scroll-region" role="region" aria-label="Scrollable live website projects">
+            <div class="website-tabs" id="website-tabs" role="tablist" aria-label="Live website projects" aria-orientation="vertical"></div>
+            <p class="website-empty" id="website-empty" hidden>No live websites added yet.</p>
+          </div>
+          <p class="website-scroll-hint" id="website-scroll-hint" hidden></p>
+        </div>
+      </div>
     </div>
   </section>
   <section class="experience" aria-labelledby="experience-title">

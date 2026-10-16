@@ -38,19 +38,20 @@ window.PORTFOLIO = {
     { name: 'Selong Selo — April update', image: 'assets/projects/email-design-5.webp', fullImage: 'assets/projects/full/email-design-5.webp', description: 'Email newsletter design.' },
     { name: 'Selong Selo — September update', image: 'assets/projects/email-design-6.webp', fullImage: 'assets/projects/full/email-design-6.webp', description: 'Email newsletter design.' },
   ],
-  // Order is left to right, then top to bottom, matching the reference.
+  // Add screenshots under assets/websites/, then set previewImage and previewAlt.
+  // Keep null for previewImage when only the neutral placeholder is available.
   websites: [
-    { name: 'maryman.com', url: 'https://maryman.com', logo: 'assets/logos/maryman-25th-badge.webp', background: '#111111' },
-    { name: 'tyrantcnc.com', url: 'https://tyrantcnc.com', logo: 'assets/logos/tyrantnc-regenerated.png', background: '#111111' },
-    { name: 'tlgmarketing.com', url: 'https://tlgmarketing.com', logo: 'assets/logos/tlgmarketing-original.png', background: '#050d13' },
-    { name: 'mangancyber.com', url: 'https://mangancyber.com', logo: 'assets/logos/mangancyber-original.svg', background: '#253b62' },
-    { name: 'americanstrength.com', url: 'https://americanstrength.com', logo: 'assets/logos/americanstrength-original.png', background: '#ffffff' },
-    { name: 'placeinthyme.com', url: 'https://placeinthyme.com', logo: 'assets/logos/placeinthyme-wordmark-original.png', background: '#ffffff' },
-    { name: 'primofitnessusa.com', url: 'https://primofitnessusa.com', logo: 'assets/logos/primofitnessusa-original.png', background: '#101010' },
-    { name: 'guaranty-escrow.com', url: 'https://guaranty-escrow.com', logo: 'assets/logos/guaranty-escrow-original.png', background: '#ffffff' },
-    { name: 'slatterlawfirm.com', url: 'https://slatterlawfirm.com', logo: 'assets/logos/slatterlawfirm-regenerated.png', background: '#10283c' },
-    { name: 'effortlessoffice.com', url: 'https://effortlessoffice.com', logo: 'assets/logos/effortlessoffice-original.png', background: '#ffffff' },
-    { name: 'maxgripsystems.com', url: 'https://maxgripsystems.com', logo: 'assets/logos/maxgripsystems-original.svg', background: '#111111' },
-    { name: 'manganinc.com', url: 'https://manganinc.com', logo: 'assets/logos/manganinc-original.png', background: '#ffffff' },
+    { id: 'tlgmarketing', name: 'tlgmarketing.com', url: 'https://tlgmarketing.com', logo: 'assets/logos/tlgmarketing-original.png', background: '#050d13', previewImage: 'assets/websites/tlgmarketing.com.jpg', previewAlt: 'TLG Marketing website homepage screenshot', description: 'Digital marketing website.' },
+    { id: 'maryman', name: 'maryman.com', url: 'https://maryman.com', logo: 'assets/logos/maryman-25th-badge.webp', background: '#111111', previewImage: 'assets/websites/maryman.com.jpg', previewAlt: 'Maryman website homepage screenshot', description: 'IT services company website.' },
+    { id: 'tyrantcnc', name: 'tyrantcnc.com', url: 'https://tyrantcnc.com', logo: 'assets/logos/tyrantnc-regenerated.png', background: '#111111', previewImage: 'assets/websites/tyrantcnc.com.jpg', previewAlt: 'Tyrant CNC website homepage screenshot', description: 'Firearms accessories company blog.' },
+    { id: 'mangancyber', name: 'mangancyber.com', url: 'https://mangancyber.com', logo: 'assets/logos/mangancyber-original.svg', background: '#253b62', previewImage: 'assets/websites/mangancyber.com.jpg', previewAlt: 'Mangan Cybersecurity website homepage screenshot', description: 'Cybersecurity company website.' },
+    { id: 'primofitnessusa', name: 'primofitnessusa.com', url: 'https://primofitnessusa.com', logo: 'assets/logos/primofitnessusa-original.png', background: '#101010', previewImage: 'assets/websites/primofitnessusa.com.jpg', previewAlt: 'Primo Fitness USA website homepage screenshot', description: 'Fitness equipment website.' },
+    { id: 'effortlessoffice', name: 'effortlessoffice.com', url: 'https://effortlessoffice.com', logo: 'assets/logos/effortlessoffice-original.png', background: '#ffffff', previewImage: 'assets/websites/effortlessoffice.com.jpg', previewAlt: 'Effortless Office website homepage screenshot', description: 'IT services website and executive bio page.' },
+    { id: 'americanstrength', name: 'americanstrength.com', url: 'https://americanstrength.com', logo: 'assets/logos/americanstrength-original.png', background: '#ffffff', previewImage: 'assets/websites/americanstrength.com.jpg', previewAlt: 'American Strength website homepage screenshot', description: 'Strength equipment website.' },
+    { id: 'placeinthyme', name: 'placeinthyme.com', url: 'https://placeinthyme.com', logo: 'assets/logos/placeinthyme-wordmark-original.png', background: '#ffffff', previewImage: 'assets/websites/placeinthyme.com.jpg', previewAlt: 'Place in Thyme website homepage screenshot', description: 'Catering and private dining website.' },
+    { id: 'guaranty-escrow', name: 'guaranty-escrow.com', url: 'https://guaranty-escrow.com', logo: 'assets/logos/guaranty-escrow-original.png', background: '#ffffff', previewImage: 'assets/websites/guaranty-escrow.com.jpg', previewAlt: 'Guaranty Escrow website homepage screenshot', description: 'Escrow services website.' },
+    { id: 'slatterlawfirm', name: 'slatterlawfirm.com', url: 'https://slatterlawfirm.com', logo: 'assets/logos/slatterlawfirm-regenerated.png', background: '#10283c', previewImage: 'assets/websites/slatterlawfirm.com.jpg', previewAlt: 'Slatter Law Firm website homepage screenshot', description: 'Personal injury law firm website.' },
+    { id: 'maxgripsystems', name: 'maxgripsystems.com', url: 'https://maxgripsystems.com', logo: 'assets/logos/maxgripsystems-original.svg', background: '#111111', previewImage: 'assets/websites/maxgripsystems.com.jpg', previewAlt: 'MaxGrip Systems website homepage screenshot', description: 'Industrial grip systems website.' },
+    { id: 'manganinc', name: 'manganinc.com', url: 'https://manganinc.com', logo: 'assets/logos/manganinc-original.png', background: '#ffffff', previewImage: 'assets/websites/manganinc.com.jpg', previewAlt: 'Mangan Inc. website homepage screenshot', description: 'Engineering company website.' },
   ],
 };

@@ -54,28 +54,192 @@
     return card;
   });
 
-  data.websites.forEach(site => {
-    const card = document.createElement('a');
-    card.className = 'website-card';
-    card.href = safeUrl(site.url);
-    card.target = '_blank';
-    card.rel = 'noopener noreferrer';
-    card.setAttribute('aria-label', `Visit ${site.name} (opens in a new tab)`);
-    const wrap = document.createElement('span');
-    wrap.className = 'logo-wrap';
-    wrap.style.backgroundColor = site.background || 'transparent';
-    const logo = document.createElement('img');
-    logo.src = site.logo;
-    logo.alt = '';
-    logo.loading = 'lazy';
-    logo.decoding = 'async';
-    const name = document.createElement('span');
-    name.className = 'website-name';
-    name.textContent = site.name;
-    wrap.append(logo);
-    card.append(wrap, name, chevron());
-    document.querySelector('#website-grid').append(card);
-  });
+  const websites = Array.isArray(data.websites) ? data.websites : [];
+  const websiteCount = document.querySelector('#website-count');
+  const websiteTabs = document.querySelector('#website-tabs');
+  const websiteScrollRegion = document.querySelector('#website-scroll-region');
+  const websiteScrollHint = document.querySelector('#website-scroll-hint');
+  const websitePreview = document.querySelector('#website-preview');
+  const websitePreviewDomain = document.querySelector('#website-preview-domain');
+  const websitePreviewMedia = document.querySelector('#website-preview-media');
+  const websitePreviewPlaceholder = document.querySelector('#website-preview-placeholder');
+  const websitePlaceholderDomain = document.querySelector('#website-placeholder-domain');
+  const websiteEmpty = document.querySelector('#website-empty');
+  let selectedWebsiteId = websites.length ? websiteId(websites[0]) : null;
+
+  function websiteId(site) {
+    return String(site.id || site.url || site.name || '');
+  }
+  function websiteDomId(siteId) {
+    return siteId.toLowerCase().replace(/[^a-z0-9_-]+/g, '-').replace(/^-|-$/g, '');
+  }
+  function websiteUrl(value) {
+    if (!value) return null;
+    try {
+      const url = new URL(value);
+      return ['http:', 'https:'].includes(url.protocol) ? url.href : null;
+    } catch { return null; }
+  }
+  function selectedWebsite() {
+    return websites.find(site => websiteId(site) === selectedWebsiteId) || null;
+  }
+  function showWebsitePreview(site) {
+    websitePreviewMedia.replaceChildren();
+    websitePreviewMedia.hidden = true;
+    websitePreviewDomain.textContent = '';
+    websitePreviewPlaceholder.hidden = true;
+    websitePreview.setAttribute('aria-label', site ? `Preview of ${site.name}` : 'No live website preview');
+
+    if (!site) {
+      websitePreview.removeAttribute('aria-labelledby');
+      websitePreviewPlaceholder.hidden = false;
+      websitePlaceholderDomain.textContent = '';
+      return;
+    }
+
+    const safeUrl = websiteUrl(site.url);
+    let domain = site.name;
+    if (safeUrl) {
+      try { domain = new URL(safeUrl).hostname.replace(/^www\./, ''); } catch { /* use project name */ }
+    }
+    websitePreviewDomain.textContent = domain;
+    websitePlaceholderDomain.textContent = domain;
+    websitePreview.setAttribute('aria-labelledby', `website-tab-${websiteDomId(websiteId(site))}`);
+
+    if (!site.previewImage) {
+      websitePreviewPlaceholder.hidden = false;
+      return;
+    }
+
+    const image = document.createElement('img');
+    image.src = site.previewImage;
+    image.alt = site.previewAlt || `Website preview for ${site.name}`;
+    image.decoding = 'async';
+    image.loading = 'eager';
+    image.addEventListener('error', () => {
+      image.remove();
+      websitePreviewMedia.hidden = true;
+      websitePreviewPlaceholder.hidden = false;
+    }, { once: true });
+    websitePreviewMedia.hidden = false;
+    websitePreviewMedia.append(image);
+  }
+  function updateWebsiteScrollState() {
+    const maxScroll = Math.max(0, websiteScrollRegion.scrollHeight - websiteScrollRegion.clientHeight);
+    const hasOverflow = maxScroll > 2;
+    const atBottom = !hasOverflow || websiteScrollRegion.scrollTop >= maxScroll - 2;
+    websiteScrollRegion.classList.toggle('has-overflow', hasOverflow);
+    websiteScrollRegion.classList.toggle('at-bottom', atBottom);
+    websiteScrollHint.hidden = !hasOverflow || atBottom;
+    websiteScrollHint.textContent = `⌄ Scroll to explore all ${websites.length} projects`;
+  }
+  function renderWebsiteTabs(focusId = null) {
+    websiteTabs.replaceChildren();
+    websiteCount.textContent = String(websites.length);
+    websiteEmpty.hidden = websites.length > 0;
+    if (!websites.some(site => websiteId(site) === selectedWebsiteId)) {
+      selectedWebsiteId = websites.length ? websiteId(websites[0]) : null;
+    }
+
+    websites.forEach((site, index) => {
+      const id = websiteId(site);
+      const domId = websiteDomId(id);
+      const selected = id === selectedWebsiteId;
+      const item = document.createElement('div');
+      item.className = `website-item${selected ? ' is-active' : ''}`;
+      item.setAttribute('role', 'presentation');
+
+      const tab = document.createElement('button');
+      tab.type = 'button';
+      tab.className = 'website-tab';
+      tab.id = `website-tab-${domId}`;
+      tab.dataset.websiteId = id;
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', String(selected));
+      tab.setAttribute('aria-controls', `website-preview website-details-${domId}`);
+      tab.setAttribute('aria-expanded', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      tab.append(Object.assign(document.createElement('span'), {
+        className: 'website-tab-number',
+        textContent: String(index + 1).padStart(2, '0'),
+      }));
+
+      const logoWrap = document.createElement('span');
+      logoWrap.className = 'website-tab-logo';
+      logoWrap.style.backgroundColor = site.background || '#fff';
+      if (site.logo) {
+        const logo = document.createElement('img');
+        logo.src = site.logo;
+        logo.alt = '';
+        logo.loading = 'lazy';
+        logo.decoding = 'async';
+        logo.addEventListener('error', () => logo.remove(), { once: true });
+        logoWrap.append(logo);
+      }
+      const name = document.createElement('span');
+      name.className = 'website-tab-name';
+      name.textContent = site.name;
+      const toggle = document.createElement('span');
+      toggle.className = 'website-tab-toggle';
+      toggle.setAttribute('aria-hidden', 'true');
+      toggle.textContent = selected ? '−' : '+';
+      tab.append(logoWrap, name, toggle);
+
+      const details = document.createElement('div');
+      details.className = 'website-item-details';
+      details.id = `website-details-${domId}`;
+      details.hidden = !selected;
+      if (site.description) {
+        const description = document.createElement('p');
+        description.textContent = site.description;
+        details.append(description);
+      }
+      const url = websiteUrl(site.url);
+      if (url) {
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'View Website';
+        link.setAttribute('aria-label', `View ${site.name} (opens in a new tab)`);
+        details.append(link);
+      }
+      details.hidden = !selected || !details.childElementCount;
+
+      tab.addEventListener('click', () => selectWebsite(id));
+      tab.addEventListener('keydown', event => {
+        const currentIndex = websites.findIndex(item => websiteId(item) === id);
+        let nextIndex = currentIndex;
+        if (event.key === 'ArrowDown') nextIndex = (currentIndex + 1) % websites.length;
+        else if (event.key === 'ArrowUp') nextIndex = (currentIndex - 1 + websites.length) % websites.length;
+        else if (event.key === 'Home') nextIndex = 0;
+        else if (event.key === 'End') nextIndex = websites.length - 1;
+        else return;
+        event.preventDefault();
+        selectWebsite(websiteId(websites[nextIndex]), true);
+      });
+      item.append(tab, details);
+      websiteTabs.append(item);
+    });
+
+    showWebsitePreview(selectedWebsite());
+    window.requestAnimationFrame(updateWebsiteScrollState);
+    if (focusId) {
+      const focusTab = document.querySelector(`#website-tab-${websiteDomId(focusId)}`);
+      focusTab?.focus();
+      focusTab?.scrollIntoView({ block: 'nearest' });
+    }
+  }
+  function selectWebsite(id, moveFocus = false) {
+    if (!websites.some(site => websiteId(site) === id)) return;
+    selectedWebsiteId = id;
+    renderWebsiteTabs(moveFocus ? id : null);
+  }
+  websiteScrollRegion.addEventListener('scroll', updateWebsiteScrollState, { passive: true });
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(updateWebsiteScrollState).observe(websiteScrollRegion);
+  }
+  renderWebsiteTabs();
   document.querySelector('.cv-button').href = data.resume;
   document.querySelector('.cv-button').download = data.resume.split('/').pop();
   document.querySelectorAll('.linkedin-link').forEach(link => { link.href = safeUrl(data.linkedin); });
