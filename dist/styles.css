@@ -1458,6 +1458,7 @@ body.lightbox-open {
   position: relative;
   min-width: 0;
   height: var(--showcase-height);
+  container-type: inline-size;
 }
 .website-list-column::after {
   position: absolute;
@@ -1559,23 +1560,23 @@ body.lightbox-open {
   grid-area: name;
   min-width: 0;
   overflow-wrap: anywhere;
-  font-size: calc(clamp(9px, calc(1.45vw - 6px), 13px) + 3px);
+  font-size: clamp(11px, 1.4vw, 16px);
+  line-height: 1.2;
   font-weight: 600;
 }
 .website-item.is-active .website-tab-name {
-  font-size: 16px;
+  font-size: clamp(11px, 1.4vw, 16px);
 }
 .website-tab-description {
   display: none;
   grid-area: description;
   min-width: 0;
   color: #52727c;
-  font-size: clamp(7px, calc(1.15vw - 6px), 10px);
-  line-height: 20px;
+  font-size: clamp(10px, 1.1vw, 15px);
+  line-height: 1.35;
 }
 .website-item.is-active .website-tab-description {
   display: block;
-  font-size: 15px;
   margin-top: -19px;
 }
 .website-tab-toggle {
@@ -1622,7 +1623,6 @@ body.lightbox-open {
   .websites-showcase { grid-template-columns: minmax(0, 1fr); gap: 15px; }
   .latest { --showcase-height: clamp(300px, 62vw, 440px); }
   .website-list-column { height: min(360px, 55vh); }
-  .website-tab-name { font-size: 17px; }
 }
 @media (max-width: 480px) {
   .latest-header { grid-template-columns: minmax(0, 1fr); gap: 10px; }
@@ -1636,6 +1636,14 @@ body.lightbox-open {
   .website-item.is-active .website-tab { grid-template-columns: 48px minmax(0, 1fr) 28px 20px; gap: 9px; }
   .website-tab-logo { width: 36px; height: 36px; border-radius: 10px; }
   .website-item.is-active .website-tab-logo { width: 48px; height: 48px; }
-  .website-tab-name { font-size: 12px; }
   .website-item-details { margin-inline: 10px; }
+}
+@supports (font-size: 1cqw) {
+  .website-tab-name,
+  .website-item.is-active .website-tab-name {
+    font-size: clamp(11px, 4.4cqw, 16px);
+  }
+  .website-tab-description {
+    font-size: clamp(10px, 3.8cqw, 15px);
+  }
 }
