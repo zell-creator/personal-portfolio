@@ -8,6 +8,7 @@ window.PORTFOLIO = {
   resume: 'assets/resume/Russel_Valdez_Resume-compressed.pdf',
   linkedin: 'https://www.linkedin.com/in/russel-a-valdez/',
   projects: [
+    { name: 'K-Micro', image: 'assets/projects/kmicro-homepage.jpg', fullImage: 'assets/projects/kmicro-homepage.jpg', description: 'Website design.' },
     { name: 'Effortless — Fred Cooper bio', image: 'assets/projects/effortless-fred-cooper-bio.webp', fullImage: 'assets/projects/full/effortless-fred-cooper-bio.webp', description: 'Website design.' },
     { name: 'Kaufman Steinberg Law Firm', image: 'assets/projects/kaufman-steinberg-home.webp', fullImage: 'assets/projects/full/kaufman-steinberg-home.webp', description: 'Website design.' },
     { name: 'Place in Thyme', image: 'assets/projects/place-in-thyme-home.webp', fullImage: 'assets/projects/full/place-in-thyme-home.webp', description: 'Website design.' },
