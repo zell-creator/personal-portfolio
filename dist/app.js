@@ -65,39 +65,33 @@
   const websitePreviewPlaceholder = document.querySelector('#website-preview-placeholder');
   const websitePlaceholderDomain = document.querySelector('#website-placeholder-domain');
   const websiteEmpty = document.querySelector('#website-empty');
-  const iPadWebsiteLayout = window.matchMedia('(min-width: 801px) and (max-width: 1366px) and (pointer: coarse)');
   let selectedWebsiteId = websites.length ? websiteId(websites[0]) : null;
 
-  function syncIPadWebsiteTabs() {
-    if (!websiteListColumn) return;
-    if (!iPadWebsiteLayout.matches) {
-      websiteListColumn.style.removeProperty('height');
-      return;
-    }
-
-    const availableHeight = websitePreview.getBoundingClientRect().height;
-    const items = [...websiteTabs.children];
-    if (!availableHeight || !items.length) return;
-
-    const gap = parseFloat(getComputedStyle(websiteTabs).rowGap) || 0;
-    let fittedHeight = 0;
-    for (const item of items) {
-      const itemHeight = item.getBoundingClientRect().height;
-      const nextHeight = fittedHeight + (fittedHeight ? gap : 0) + itemHeight;
-      if (fittedHeight && nextHeight > availableHeight) break;
-      fittedHeight = nextHeight;
-    }
-    websiteListColumn.style.height = `${Math.min(availableHeight, fittedHeight)}px`;
+  function updateWebsiteListFade() {
+    if (!websiteListColumn || !websiteScrollRegion) return;
+    const hasMoreTabs = websiteScrollRegion.scrollHeight > websiteScrollRegion.clientHeight + 1;
+    const atListEnd = websiteScrollRegion.scrollTop + websiteScrollRegion.clientHeight >= websiteScrollRegion.scrollHeight - 1;
+    websiteListColumn.classList.toggle('has-more-tabs', hasMoreTabs);
+    websiteListColumn.classList.toggle('at-list-end', !hasMoreTabs || atListEnd);
   }
 
-  const scheduleIPadWebsiteTabsSync = () => requestAnimationFrame(syncIPadWebsiteTabs);
+  function syncWebsiteTabsToPreview() {
+    if (!websiteListColumn) return;
+
+    const availableHeight = websitePreview.getBoundingClientRect().height;
+    if (!availableHeight || !websiteTabs.children.length) return;
+    websiteListColumn.style.height = `${availableHeight}px`;
+    requestAnimationFrame(updateWebsiteListFade);
+  }
+
+  const scheduleWebsiteTabsSync = () => requestAnimationFrame(syncWebsiteTabsToPreview);
   if ('ResizeObserver' in window) {
-    const websiteLayoutObserver = new ResizeObserver(scheduleIPadWebsiteTabsSync);
+    const websiteLayoutObserver = new ResizeObserver(scheduleWebsiteTabsSync);
     websiteLayoutObserver.observe(websitePreview);
     websiteLayoutObserver.observe(websiteTabs);
   }
-  iPadWebsiteLayout.addEventListener('change', scheduleIPadWebsiteTabsSync);
-  window.addEventListener('resize', scheduleIPadWebsiteTabsSync, { passive: true });
+  window.addEventListener('resize', scheduleWebsiteTabsSync, { passive: true });
+  websiteScrollRegion?.addEventListener('scroll', updateWebsiteListFade, { passive: true });
 
   function websiteId(site) {
     return String(site.id || site.url || site.name || '');
@@ -152,9 +146,9 @@
       image.remove();
       websitePreviewMedia.hidden = true;
       websitePreviewPlaceholder.hidden = false;
-      scheduleIPadWebsiteTabsSync();
+      scheduleWebsiteTabsSync();
     }, { once: true });
-    image.addEventListener('load', scheduleIPadWebsiteTabsSync, { once: true });
+    image.addEventListener('load', scheduleWebsiteTabsSync, { once: true });
     websitePreviewMedia.hidden = false;
     websitePreviewMedia.append(image);
   }
@@ -246,7 +240,7 @@
     });
 
     showWebsitePreview(selectedWebsite());
-    scheduleIPadWebsiteTabsSync();
+    scheduleWebsiteTabsSync();
     if (focusId) {
       const focusTab = document.querySelector(`#website-tab-${websiteDomId(focusId)}`);
       focusTab?.focus();

@@ -1459,6 +1459,20 @@ body.lightbox-open {
   min-width: 0;
   height: var(--showcase-height);
 }
+.website-list-column::after {
+  position: absolute;
+  z-index: 2;
+  right: 7px;
+  bottom: 0;
+  left: 0;
+  height: 34px;
+  background: linear-gradient(to bottom, #e0f5f700, #e0f5f7 92%);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+.website-list-column.has-more-tabs:not(.at-list-end)::after { opacity: 1; }
 .website-scroll-region {
   position: relative;
   height: 100%;
