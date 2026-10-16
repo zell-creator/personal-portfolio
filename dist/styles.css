@@ -1294,7 +1294,7 @@ body.lightbox-open {
 
 /* Live websites: fixed preview beside an independently scrolling tab list. */
 .latest {
-  --showcase-height: clamp(440px, 39vw, 540px);
+  --showcase-height: clamp(390px, 30.8vw, 400px);
 }
 .latest-header,
 .websites-showcase {
@@ -1358,12 +1358,13 @@ body.lightbox-open {
   letter-spacing: 0;
 }
 .websites-showcase {
-  align-items: stretch;
+  align-items: start;
 }
 .website-preview {
   display: flex;
   min-width: 0;
   height: auto;
+  align-self: start;
   flex-direction: column;
   overflow: hidden;
   border: 1px solid #9ddce5;
