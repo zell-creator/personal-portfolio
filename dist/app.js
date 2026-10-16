@@ -65,6 +65,7 @@
   const websitePreviewPlaceholder = document.querySelector('#website-preview-placeholder');
   const websitePlaceholderDomain = document.querySelector('#website-placeholder-domain');
   const websiteEmpty = document.querySelector('#website-empty');
+  const mobileWebsiteLayout = window.matchMedia('(max-width: 800px)');
   let selectedWebsiteId = websites.length ? websiteId(websites[0]) : null;
 
   function updateWebsiteListFade() {
@@ -77,6 +78,12 @@
 
   function syncWebsiteTabsToPreview() {
     if (!websiteListColumn) return;
+
+    if (mobileWebsiteLayout.matches) {
+      websiteListColumn.style.height = 'auto';
+      requestAnimationFrame(updateWebsiteListFade);
+      return;
+    }
 
     const availableHeight = websitePreview.getBoundingClientRect().height;
     if (!availableHeight || !websiteTabs.children.length) return;
