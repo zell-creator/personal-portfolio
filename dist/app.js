@@ -10,10 +10,27 @@
   const loading = document.querySelector('#lightbox-loading');
   const close = dialog.querySelector('.lightbox-close');
   const liveLink = document.querySelector('#lightbox-live');
+  const lightboxDots = document.querySelector('#lightbox-dots');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let current = 0;
   let trigger = null;
   let pointerStart = null;
+
+  function renderLightboxDots() {
+    const total = data.projects.length;
+    const indexes = total <= 7
+      ? Array.from({ length: total }, (_, index) => index)
+      : Array.from({ length: 5 }, (_, offset) => (current - 2 + offset + total) % total);
+    lightboxDots.replaceChildren(...indexes.map(index => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'lightbox-dot';
+      dot.setAttribute('aria-label', `View project ${index + 1}: ${data.projects[index].name}`);
+      if (index === current) dot.setAttribute('aria-current', 'true');
+      dot.addEventListener('click', () => showProject(index));
+      return dot;
+    }));
+  }
 
   function safeUrl(value) {
     if (!value) return null;
@@ -325,6 +342,7 @@
     document.querySelector('#lightbox-title').textContent = project.name;
     document.querySelector('#lightbox-description').textContent = project.description || '';
     document.querySelector('#lightbox-count').textContent = `${current + 1} / ${data.projects.length}`;
+    renderLightboxDots();
     const url = safeUrl(project.url);
     liveLink.hidden = !url;
     if (url) liveLink.href = url; else liveLink.removeAttribute('href');

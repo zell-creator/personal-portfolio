@@ -8,6 +8,16 @@ window.PORTFOLIO = {
   resume: 'assets/resume/Russel_Valdez_Resume-compressed.pdf',
   linkedin: 'https://www.linkedin.com/in/russel-a-valdez/',
   projects: [
+    { name: 'Effortless — Birthday & Anniversary Email', image: 'assets/projects/effortless-birthday-anniversary-email.jpg', fullImage: 'assets/projects/effortless-birthday-anniversary-email.jpg', description: 'Email design.' },
+    { name: 'Effortless — Employee Bulletin Email', image: 'assets/projects/effortless-employee-bulletin-email.jpg', fullImage: 'assets/projects/effortless-employee-bulletin-email.jpg', description: 'Email design.' },
+    { name: 'China Homelife — Electronic Super Sale', image: 'assets/projects/electronic-super-sale.jpg', fullImage: 'assets/projects/electronic-super-sale.jpg', description: 'Website design.' },
+    { name: 'Stick Experiment', image: 'assets/projects/stick-experiment.jpg', fullImage: 'assets/projects/stick-experiment.jpg', description: 'Website design.' },
+    { name: 'Dr. Al’s Medical Weight Loss', image: 'assets/projects/dr-als-medical-weight-loss.jpg', fullImage: 'assets/projects/dr-als-medical-weight-loss.jpg', description: 'Website design.' },
+    { name: 'JFG — Jacques Financial Group', image: 'assets/projects/jfg-mortgage.jpg', fullImage: 'assets/projects/jfg-mortgage.jpg', description: 'Website design.' },
+    { name: 'Valentine Law Group', image: 'assets/projects/valentine-law-group.jpg', fullImage: 'assets/projects/valentine-law-group.jpg', description: 'Website design.' },
+    { name: 'Smokeshow Seasoning', image: 'assets/projects/smokeshow-seasoning.jpg', fullImage: 'assets/projects/smokeshow-seasoning.jpg', description: 'Website design.' },
+    { name: 'Capital Insight', image: 'assets/projects/capital-insight.jpg', fullImage: 'assets/projects/capital-insight.jpg', description: 'Website design.' },
+    { name: 'Lee & Associates', image: 'assets/projects/lee-associates.jpg', fullImage: 'assets/projects/lee-associates.jpg', description: 'Website design.' },
     { name: 'K-Micro', image: 'assets/projects/kmicro-homepage.jpg', fullImage: 'assets/projects/kmicro-homepage.jpg', description: 'Website design.' },
     { name: 'Effortless — Fred Cooper bio', image: 'assets/projects/effortless-fred-cooper-bio.webp', fullImage: 'assets/projects/full/effortless-fred-cooper-bio.webp', description: 'Website design.' },
     { name: 'Kaufman Steinberg Law Firm', image: 'assets/projects/kaufman-steinberg-home.webp', fullImage: 'assets/projects/full/kaufman-steinberg-home.webp', description: 'Website design.' },
@@ -42,7 +52,6 @@ window.PORTFOLIO = {
   // Add screenshots under assets/websites/, then set previewImage and previewAlt.
   // Keep null for previewImage when only the neutral placeholder is available.
   websites: [
-    { id: 'tlgmarketing', name: 'tlgmarketing.com', url: 'https://tlgmarketing.com', logo: 'assets/logos/tlgmarketing-original.png', background: '#050d13', previewImage: 'assets/websites/tlgmarketing.com.jpg', previewAlt: 'TLG Marketing website homepage screenshot', description: 'Digital marketing website.' },
     { id: 'maryman', name: 'maryman.com', url: 'https://maryman.com', logo: 'assets/logos/maryman-25th-badge.webp', background: '#111111', previewImage: 'assets/websites/maryman.com.png', previewAlt: 'Maryman website homepage screenshot', description: 'IT services company website.' },
     { id: 'tyrantcnc', name: 'tyrantcnc.com', url: 'https://tyrantcnc.com', logo: 'assets/logos/tyrantnc-regenerated.png', background: '#111111', previewImage: 'assets/websites/tyrantcnc.com.jpg', previewAlt: 'Tyrant CNC website homepage screenshot', description: 'Firearms accessories company blog.' },
     { id: 'mangancyber', name: 'mangancyber.com', url: 'https://mangancyber.com', logo: 'assets/logos/mangancyber-original.svg', background: '#253b62', previewImage: 'assets/websites/mangancyber.com.jpg', previewAlt: 'Mangan Cybersecurity website homepage screenshot', description: 'Cybersecurity company website.' },
@@ -54,5 +63,7 @@ window.PORTFOLIO = {
     { id: 'slatterlawfirm', name: 'slatterlawfirm.com', url: 'https://slatterlawfirm.com', logo: 'assets/logos/slatterlawfirm-regenerated.png', background: '#10283c', previewImage: 'assets/websites/slatterlawfirm.com.jpg', previewAlt: 'Slatter Law Firm website homepage screenshot', description: 'Personal injury law firm website.' },
     { id: 'maxgripsystems', name: 'maxgripsystems.com', url: 'https://maxgripsystems.com', logo: 'assets/logos/maxgripsystems-original.svg', background: '#111111', previewImage: 'assets/websites/maxgripsystems.com.jpg', previewAlt: 'MaxGrip Systems website homepage screenshot', description: 'Industrial grip systems website.' },
     { id: 'manganinc', name: 'manganinc.com', url: 'https://manganinc.com', logo: 'assets/logos/manganinc-original.png', background: '#ffffff', previewImage: 'assets/websites/manganinc.com.jpg', previewAlt: 'Mangan Inc. website homepage screenshot', description: 'Engineering company website.' },
+    { id: 'mangancontinuity', name: 'mangancontinuity.com', url: 'https://mangancontinuity.com/', logo: 'assets/logos/mangancontinuity.png', background: '#ffffff', previewImage: 'assets/websites/mangancontinuity.com.png', previewAlt: 'Mangan Continuity website homepage screenshot', description: 'Terminal and operational management solutions.' },
+    { id: 'tlgmarketing', name: 'tlgmarketing.com', url: 'https://tlgmarketing.com', logo: 'assets/logos/tlgmarketing-original.png', background: '#050d13', previewImage: 'assets/websites/tlgmarketing.com.jpg', previewAlt: 'TLG Marketing website homepage screenshot', description: 'Digital marketing website.' },
   ],
 };

@@ -556,21 +556,22 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
 .lightbox {
   position:fixed;
   inset:0;
-  width:min(1140px,96vw);
-  height:94dvh;
-  max-width:96vw;
-  max-height:94dvh;
+  width:min(920px,calc(100vw - 40px));
+  height:min(78dvh,760px);
+  max-width:calc(100vw - 40px);
+  max-height:78dvh;
+  margin:auto;
   border:1px solid #88dce344;
   border-radius:18px;
   padding:0;
-  background:#042c37;
+  background:#050b0f;
   color:white;
   overflow:hidden;
   box-shadow:0 24px 100px #000a
 }
 .lightbox::backdrop {
-  background:#00131ce8;
-  backdrop-filter:blur(7px)
+  background:#000b;
+  backdrop-filter:blur(3px)
 }
 .lightbox-shell {
   height:100%;
@@ -650,20 +651,57 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   border-top:1px solid #93dbe333;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:14px
+  justify-content:center;
+  flex-direction:column;
+  gap:7px
 }
 .lightbox-nav {
+  position:absolute;
+  z-index:2;
+  top:50%;
+  transform:translateY(-50%);
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  border:1px solid #8ed7df66;
+  border-radius:50%;
+  padding:0;
+  background:#00131ccc;
+  color:#ddf7f9;
+  box-shadow:0 5px 20px #0007
+}
+.lightbox-nav:hover {
+  transform:translateY(-50%) scale(1.06)
+}
+.lightbox-previous {
+  left:18px
+}
+.lightbox-next {
+  right:18px
+}
+.lightbox-dots {
   display:flex;
   align-items:center;
+  justify-content:center;
   gap:9px;
-  border:1px solid #8ed7df66;
-  border-radius:10px;
-  padding:10px 15px;
-  background:transparent;
-  color:#ddf7f9;
-  font-size:14px;
-  min-height:44px
+  min-width:126px
+}
+.lightbox-dot {
+  width:11px;
+  height:11px;
+  padding:0;
+  border:1px solid #d8f7f9aa;
+  border-radius:50%;
+  background:#7c9ba0
+}
+.lightbox-dot[aria-current="true"] {
+  background:#fff;
+  border-color:#fff;
+  transform:scale(1.18)
+}
+.lightbox-dot:hover {
+  background:var(--aqua)
 }
 .lightbox-meta {
   text-align:center;
@@ -1054,9 +1092,10 @@ body.lightbox-open {
     padding-bottom:27px
   }
   .lightbox {
-    width:96vw;
-    max-width:96vw;
-    height:94dvh;
+    width:calc(100vw - 20px);
+    max-width:calc(100vw - 20px);
+    height:86dvh;
+    max-height:86dvh;
     border-radius:12px
   }
   .lightbox-header {
@@ -1078,9 +1117,8 @@ body.lightbox-open {
     padding:12px
   }
   .lightbox-nav {
-    padding:8px 10px;
-    gap:2px;
-    font-size:12px
+    width:42px;
+    height:42px
   }
   .lightbox-meta {
     font-size:12px
