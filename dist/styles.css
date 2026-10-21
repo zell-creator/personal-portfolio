@@ -621,7 +621,21 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   align-items:flex-start;
   justify-content:center;
   padding:24px;
-  touch-action:pan-y pinch-zoom
+  touch-action:pan-y pinch-zoom;
+  scrollbar-width:thin;
+  scrollbar-color:#bce9ea #001923
+}
+.lightbox-view::-webkit-scrollbar {
+  width:9px;
+  height:9px
+}
+.lightbox-view::-webkit-scrollbar-track {
+  background:#001923
+}
+.lightbox-view::-webkit-scrollbar-thumb {
+  border:2px solid #001923;
+  border-radius:99px;
+  background:#bce9ea
 }
 .lightbox-loading {
   position: absolute;
