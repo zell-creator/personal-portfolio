@@ -114,6 +114,14 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   line-height:1.6;
   margin-top:3px
 }
+.case-study-link {
+  color:var(--aqua);
+  font:700 clamp(10px,1.2vw,13px) Roboto,Arial,sans-serif;
+  letter-spacing:.06em;
+  text-decoration:none;
+  white-space:nowrap
+}
+.case-study-link:hover { color:#fff; text-decoration:underline; text-underline-offset:5px }
 .header-actions {
   display:flex;
   align-items:center;
