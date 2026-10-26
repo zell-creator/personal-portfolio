@@ -33,8 +33,6 @@ window.PORTFOLIO = {
     { name: 'Earn Tuition Online', image: 'assets/projects/earn-tuition.webp', fullImage: 'assets/projects/full/earn-tuition.webp', description: 'Education website design.' },
     { name: 'Baetagroup', image: 'assets/projects/baetagroup.webp', fullImage: 'assets/projects/full/baetagroup.webp', description: 'Corporate website design.' },
     { name: 'Elmbrook Humane Society', image: 'assets/projects/elmbrook-humane-society.webp', fullImage: 'assets/projects/full/elmbrook-humane-society.webp', description: 'Humane society website design.' },
-    { name: 'More Than Admission', image: 'assets/projects/more-than-admission.webp', fit: 'contain', fullImage: 'assets/projects/full/more-than-admission.webp', description: 'Sports and events website design.' },
-    { name: 'Caribbean Choice', image: 'assets/projects/caribbean-choice.webp', fit: 'contain', fullImage: 'assets/projects/full/caribbean-choice.webp', description: 'Restaurant website design.' },
     { name: 'Silver Creek', image: 'assets/projects/silver-creek.webp', fit: 'contain', fullImage: 'assets/projects/full/silver-creek.webp', description: 'Natural market and café website design.' },
     { name: 'Alvaka Networks', image: 'assets/projects/alvaka-networks.webp', fullImage: 'assets/projects/full/alvaka-networks.webp', description: 'Digital campaign artwork.', fit: 'contain' },
     { name: 'Effortless — business card front', image: 'assets/projects/effortless-business-card-front.webp', fullImage: 'assets/projects/full/effortless-business-card-front.webp', description: 'Business card design.', fit: 'contain' },
