@@ -116,23 +116,23 @@
 
         <div class="product-grid">
           <figure class="product-card">
-            <a href="assets/projects/full/kmicro-business-cards.webp" target="_blank" rel="noopener noreferrer"><img src="assets/projects/kmicro-business-cards.webp" alt="KMicro business card design" loading="lazy"></a>
+            <a class="product-image-link" href="assets/projects/full/kmicro-business-cards.webp" aria-label="View full-size KMicro business card design"><img src="assets/projects/kmicro-business-cards.webp" alt="KMicro business card design" loading="lazy"></a>
             <figcaption><span>BUSINESS CARDS</span><strong>KMicro</strong></figcaption>
           </figure>
           <figure class="product-card">
-            <a href="assets/projects/full/kyudo-banner.webp" target="_blank" rel="noopener noreferrer"><img src="assets/projects/kyudo-banner.webp" alt="Kyūdō banner stand design" loading="lazy"></a>
+            <a class="product-image-link" href="assets/projects/full/kyudo-banner.webp" aria-label="View full-size Kyūdō banner stand design"><img src="assets/projects/kyudo-banner.webp" alt="Kyūdō banner stand design" loading="lazy"></a>
             <figcaption><span>BANNER STAND</span><strong>Kyūdō</strong></figcaption>
           </figure>
           <figure class="product-card">
-            <a href="assets/projects/full/tricore-banner.webp" target="_blank" rel="noopener noreferrer"><img src="assets/projects/tricore-banner.webp" alt="TriCore IMS banner stand design" loading="lazy"></a>
+            <a class="product-image-link" href="assets/projects/full/tricore-banner.webp" aria-label="View full-size TriCore IMS banner stand design"><img src="assets/projects/tricore-banner.webp" alt="TriCore IMS banner stand design" loading="lazy"></a>
             <figcaption><span>BANNER STAND</span><strong>TriCore IMS</strong></figcaption>
           </figure>
           <figure class="product-card">
-            <a href="assets/projects/21cp-rom-infinite-mobile-app.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/projects/21cp-rom-infinite-mobile-app.jpg" alt="21st Century Programming ROM Infinite Mobile Apps magazine page" loading="lazy"></a>
+            <a class="product-image-link" href="assets/projects/21cp-rom-infinite-mobile-app.jpg" aria-label="View full-size ROM Infinite Mobile Apps magazine page"><img src="assets/projects/21cp-rom-infinite-mobile-app.jpg" alt="21st Century Programming ROM Infinite Mobile Apps magazine page" loading="lazy"></a>
             <figcaption><span>MAGAZINE PAGE</span><strong>21st Century Programming — ROM Infinite Mobile Apps</strong></figcaption>
           </figure>
           <figure class="product-card">
-            <a href="assets/projects/21cp-table-skirt.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/projects/21cp-table-skirt.jpg" alt="21st Century Programming event table skirt artwork" loading="lazy"></a>
+            <a class="product-image-link" href="assets/projects/21cp-table-skirt.jpg" aria-label="View full-size 21st Century Programming table skirt artwork"><img src="assets/projects/21cp-table-skirt.jpg" alt="21st Century Programming event table skirt artwork" loading="lazy"></a>
             <figcaption><span>EVENT DISPLAY</span><strong>21st Century Programming — Table Skirt</strong></figcaption>
           </figure>
         </div>
@@ -154,10 +154,34 @@
       </div>
     </section>
 
+    <dialog class="image-viewer" aria-label="Full-size project image">
+      <button class="image-viewer-close" type="button" aria-label="Close full-size image">×</button>
+      <img class="image-viewer-img" alt="">
+      <p class="image-viewer-caption"></p>
+    </dialog>
+
     <section class="closing" id="contact">
       <div class="container closing-inner"><div><p class="eyebrow">LET'S BUILD WHAT'S NEXT</p><h2>Have a project in mind?</h2><p>Explore more work in my portfolio or get in touch.</p></div><div class="closing-actions"><a class="button button-aqua" href="index.html">Back to portfolio <span aria-hidden="true">↗</span></a><a class="button button-outline" href="mailto:zellstrife@gmail.com">Contact me</a></div></div>
     </section>
   </main>
   <footer class="case-footer"><div class="container"><p>RUSSEL A. VALDEZ</p><a href="index.html">Portfolio home</a><a href="https://www.linkedin.com/in/russel-a-valdez/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></footer>
+  <script>
+    const imageViewer = document.querySelector('.image-viewer');
+    const imageViewerImage = document.querySelector('.image-viewer-img');
+    document.querySelectorAll('.product-image-link').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const previewImage = link.querySelector('img');
+        imageViewerImage.src = link.href;
+        imageViewerImage.alt = previewImage.alt;
+        document.querySelector('.image-viewer-caption').textContent = previewImage.alt;
+        imageViewer.showModal();
+      });
+    });
+    document.querySelector('.image-viewer-close').addEventListener('click', () => imageViewer.close());
+    imageViewer.addEventListener('click', (event) => {
+      if (event.target === imageViewer) imageViewer.close();
+    });
+  </script>
 </body>
 </html>
