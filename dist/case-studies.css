@@ -11,3 +11,39 @@
 .image-viewer-close:hover{background:#0b6978}
 .image-viewer-caption{position:absolute;right:20px;bottom:12px;left:20px;color:#d7eff0;text-align:center;font:500 12px/1.35 Roboto,Arial,sans-serif}
 @media(max-width:640px){.image-viewer{width:96vw;height:88vh;padding:52px 10px 48px;border-radius:9px}.image-viewer-caption{font-size:11px}}
+
+/* Keep the case-study type hierarchy aligned with the portfolio home page. */
+.hero-content h1{font-size:clamp(32px,4.55vw,53px);line-height:1.12;letter-spacing:.1px}
+.hero-content h1 em{display:inline-block;font-size:clamp(42px,6.05vw,70px);line-height:1.16;letter-spacing:.2px}
+.hero-summary{font-size:clamp(18px,2.4vw,27px);line-height:1.35}
+.eyebrow{font-size:clamp(12px,1.6vw,16px);font-weight:600;letter-spacing:normal}
+.section-heading h2{font-size:clamp(35px,4.6vw,49px);line-height:1.02;letter-spacing:.2px}
+.section-lede{font-size:clamp(14px,1.7vw,19px);line-height:1.45}
+.store-info h3{font-size:clamp(18px,2.5vw,27px);font-weight:500}
+.store-info>p:not(.store-type){font-size:14px;line-height:1.55}
+.story-copy h3,.solution-card h3,.results-card h3{font-size:clamp(20px,2.5vw,28px);line-height:1.25;letter-spacing:.1px}
+.story-copy>p,.solution-card>p:not(.eyebrow),.results-card>p:not(.eyebrow){font-size:16px;line-height:1.55}
+.process-steps h4{font-size:clamp(15px,2.05vw,23px);font-weight:500}
+.process-steps p{font-size:14px;line-height:1.45}
+.solution-card h3,.results-card h3{font-size:clamp(20px,2.2vw,25px)}
+.solution-card>p:not(.eyebrow),.results-card>p:not(.eyebrow){font-size:16px}
+.closing h2{font-size:clamp(31px,4.05vw,44px);font-weight:500;letter-spacing:.2px}
+.closing p:not(.eyebrow){font-size:16px;line-height:1.45}
+@media(max-width:640px){
+  .hero-content h1{font-size:clamp(25px,5.95vw,40px);line-height:1.12}
+  .hero-content h1 em{font-size:clamp(34px,8.4vw,54px);line-height:1.16}
+  .hero-summary{font-size:18px;line-height:1.4}
+  .eyebrow{font-size:12px}
+  .section-heading h2{font-size:37px;line-height:1.02}
+  .section-lede{font-size:16px;line-height:1.45}
+  .store-info h3{font-size:23px}
+  .story-copy h3,.solution-card h3,.results-card h3{font-size:23px}
+  .story-copy>p,.solution-card>p:not(.eyebrow),.results-card>p:not(.eyebrow){font-size:14px;line-height:1.55}
+  .process-steps h4{font-size:16px}
+  .process-steps p{font-size:13px}
+  .solution-card>p:not(.eyebrow),.results-card>p:not(.eyebrow){font-size:14px}
+  .closing h2{font-size:28px}
+  .closing p:not(.eyebrow){font-size:14px}
+}
+.section-heading h2{font-weight:500}
+.story-copy h3,.solution-card h3,.results-card h3{font-weight:500}
