@@ -65,3 +65,10 @@
  .hero-summary{font-size:16px;max-width:340px}
  .hero-actions{margin-top:20px;gap:14px}
 }
+
+/* Stack process steps and client work on mobile. */
+@media(max-width:640px){
+ .process-steps{grid-template-columns:1fr;gap:14px}
+ .product-grid{grid-template-columns:1fr;gap:18px}
+ .product-card,.product-card:nth-child(4),.product-card:nth-child(5),.product-card:last-child{grid-column:1;max-width:none;width:100%}
+}
