@@ -84,4 +84,9 @@
 .store-card{display:flex;flex-direction:column}
 .store-info{display:flex;flex:1;flex-direction:column;align-items:flex-start}
 .store-info .arrow-link{font-size:14px;margin-top:auto;padding-top:15px}
-.solution-results{align-items:start}
+.solution-results{align-items:stretch;grid-template-columns:1fr 1fr}
+.solution-card{display:flex;flex-direction:column}
+.solution-card>p:not(.eyebrow){margin-bottom:auto}
+.result-stat{display:flex;align-items:baseline;gap:10px;font-size:36px;line-height:1.1}
+.result-stat span{margin:0}
+@media(max-width:640px){.solution-results{grid-template-columns:1fr}}
