@@ -17,7 +17,13 @@
 .hero-content h1 em{display:inline-block;font-size:clamp(42px,6.05vw,70px);line-height:1.16;letter-spacing:.2px}
 .hero-summary{font-size:clamp(18px,2.4vw,27px);line-height:1.35}
 .eyebrow{font-size:clamp(12px,1.6vw,16px);font-weight:600;letter-spacing:normal}
-.section-heading h2{font-size:clamp(35px,4.6vw,49px);line-height:1.02;letter-spacing:.2px}
+.section-heading h2{font-size:clamp(38px,4.4vw,54px);line-height:1.08;letter-spacing:.2px;text-transform:uppercase}
+.section-heading h2 span{color:inherit}
+.section-heading .eyebrow,.closing .eyebrow{display:flex;align-items:center;gap:30px;font-family:Roboto,Arial,sans-serif;line-height:1.2;letter-spacing:0;text-transform:uppercase}
+.section-heading .eyebrow::after,.closing .eyebrow::after{content:"";flex:0 1 125px;min-width:24px;height:2px;background:#bae9ec}
+.section-heading .dark-eyebrow,.closing .eyebrow{color:var(--ink)}
+.print-heading h2{font-size:clamp(31px,4.05vw,44px);line-height:1.22}
+.print-heading .eyebrow{color:#b6e6e9}
 .section-lede{font-size:clamp(14px,1.7vw,19px);line-height:1.45}
 .store-info h3{font-size:clamp(18px,2.5vw,27px);font-weight:500}
 .store-info>p:not(.store-type){font-size:14px;line-height:1.55}
@@ -27,14 +33,16 @@
 .process-steps p{font-size:14px;line-height:1.45}
 .solution-card h3,.results-card h3{font-size:clamp(20px,2.2vw,25px)}
 .solution-card>p:not(.eyebrow),.results-card>p:not(.eyebrow){font-size:16px}
-.closing h2{font-size:clamp(31px,4.05vw,44px);font-weight:500;letter-spacing:.2px}
+.closing h2{font-size:clamp(31px,4.05vw,44px);font-weight:500;line-height:1.22;letter-spacing:.2px;text-transform:uppercase}
 .closing p:not(.eyebrow){font-size:16px;line-height:1.45}
 @media(max-width:640px){
   .hero-content h1{font-size:clamp(25px,5.95vw,40px);line-height:1.12}
   .hero-content h1 em{font-size:clamp(34px,8.4vw,54px);line-height:1.16}
   .hero-summary{font-size:18px;line-height:1.4}
   .eyebrow{font-size:12px}
-  .section-heading h2{font-size:37px;line-height:1.02}
+  .section-heading h2{font-size:clamp(32px,9vw,42px);line-height:1.08}
+  .print-heading h2{font-size:31px;line-height:1.22}
+  .section-heading .eyebrow,.closing .eyebrow{gap:18px}
   .section-lede{font-size:16px;line-height:1.45}
   .store-info h3{font-size:23px}
   .story-copy h3,.solution-card h3,.results-card h3{font-size:23px}
