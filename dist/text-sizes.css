@@ -41,3 +41,12 @@
   padding-top: 0;
   line-height: 1.2;
 }
+
+/* Client-product card captions retain readable sizes on desktop and mobile. */
+.product-card figcaption span {
+  font-size: 13px;
+}
+
+.product-card figcaption strong {
+  font-size: 14px;
+}
