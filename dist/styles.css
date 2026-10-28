@@ -84,7 +84,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   overflow:hidden;
   min-height:clamp(475px,59.9vw,700px);
   color:white;
-  background:#022c3b url('assets/backgrounds/hero-digital-studio.webp') center/cover no-repeat
+  background:#001d27 url('assets/backgrounds/hero-digital-studio.webp') right center / auto 100% no-repeat
 }
 .site-header {
   color: #fff;
@@ -870,7 +870,9 @@ body.lightbox-open {
     width:calc(100% - 40px)
   }
   .hero-shell {
-    min-height:575px
+    min-height:575px;
+    background-size:cover;
+    background-position:center
   }
   .site-header {
     padding-top:24px;
