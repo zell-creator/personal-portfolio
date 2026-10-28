@@ -1,6 +1,7 @@
-/* Shared action and section-label text size for every portfolio page. */
+/* Shared action and section-subtitle sizes for every portfolio page. */
 :root {
   --action-label-size: 12px;
+  --section-subtitle-size: 16px;
 }
 
 .cv-button,
@@ -28,5 +29,15 @@
 .story-label p,
 .solution-card .eyebrow,
 .results-card .eyebrow {
-  font-size: var(--action-label-size);
+  font-size: var(--section-subtitle-size);
+  white-space: normal;
+}
+
+.story-label {
+  align-items: center;
+}
+
+.story-label p {
+  padding-top: 0;
+  line-height: 1.2;
 }
