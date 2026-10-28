@@ -80,3 +80,7 @@
  .product-grid{grid-template-columns:1fr;gap:18px}
  .product-card,.product-card:nth-child(4),.product-card:nth-child(5),.product-card:last-child{grid-column:1;max-width:none;width:100%}
 }
+
+/* Consistent action text and case-study stage labels at every screen size. */
+.cv-button,.button,.text-link,.arrow-link,.image-corner,.nav-back,.section-nav a{font-size:13px}
+.story-label p,.solution-card .eyebrow,.results-card .eyebrow{font-size:13px}
