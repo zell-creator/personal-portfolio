@@ -1,0 +1,32 @@
+/* Shared action and section-label text size for every portfolio page. */
+:root {
+  --action-label-size: 12px;
+}
+
+.cv-button,
+.case-study-link,
+.button,
+.text-link,
+.arrow-link,
+.image-corner,
+.nav-back,
+.section-nav a,
+.website-item-details a,
+.project-caption,
+#lightbox-live,
+.website-tab-name,
+.website-item.is-active .website-tab-name,
+.website-tab-description,
+.website-tab-number {
+  font-size: var(--action-label-size);
+}
+
+.eyebrow,
+.latest .latest-heading .eyebrow,
+.section-heading .eyebrow,
+.closing .eyebrow,
+.story-label p,
+.solution-card .eyebrow,
+.results-card .eyebrow {
+  font-size: var(--action-label-size);
+}
