@@ -84,7 +84,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   overflow:hidden;
   min-height:clamp(475px,59.9vw,700px);
   color:white;
-  background:#001d27 url('assets/backgrounds/hero-digital-studio-wide.webp') right center / cover no-repeat
+  background:#001d27 url('assets/backgrounds/hero-digital-studio-wide-v2.webp') right center / cover no-repeat
 }
 .site-header {
   color: #fff;
