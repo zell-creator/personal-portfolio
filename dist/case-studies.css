@@ -56,22 +56,32 @@
 .section-heading h2{font-weight:500}
 .story-copy h3,.solution-card h3,.results-card h3{font-weight:500}
 
-/* Compact case-study hero, including navigation and actions. */
-.case-hero{height:480px;min-height:0;background-position:center}
+/* Keep the case-study hero compact while matching the home page type scale. */
+.case-hero{min-height:540px;background-position:center}
 .hero-overlay{background:linear-gradient(90deg,rgba(0,23,32,.3),rgba(0,32,42,.12) 60%,transparent)}
 .hero-grid-mark{display:none}
 .hero-content{padding-top:150px;padding-bottom:32px}
-.hero-content h1{margin-top:16px;font-size:clamp(32px,3.6vw,44px)}
-.hero-content h1 em{font-size:clamp(38px,4.4vw,54px)}
-.hero-summary{margin-top:16px;font-size:18px;line-height:1.4}
+.case-header{padding-top:clamp(18px,2.4vw,29px)}
+.case-header .name{font-size:clamp(20px,2.55vw,29px);line-height:1.2}
+.case-header .profession{margin-top:3px;font-size:clamp(11px,1.5vw,17px);line-height:1.6}
+.hero-content h1{margin-top:16px;font-size:clamp(32px,4.55vw,53px)}
+.hero-content h1 em{font-size:clamp(42px,6.05vw,70px)}
+.hero-summary{margin-top:16px;font-size:clamp(18px,2.4vw,27px);line-height:1.2}
 .hero-actions{margin-top:22px}
 @media(max-width:640px){
  .case-hero{height:auto;min-height:0;background-position:60% center}
+ .case-header{padding-top:24px}
+ .case-header .name{font-size:20px}
+ .case-header .profession{max-width:220px;margin-top:7px;font-size:10px;line-height:1.4}
  .hero-content{padding-top:146px;padding-bottom:24px}
- .hero-content h1{font-size:30px}
- .hero-content h1 em{font-size:36px}
- .hero-summary{font-size:16px;max-width:340px}
+ .hero-content h1{font-size:clamp(25px,5.95vw,40px)}
+ .hero-content h1 em{font-size:clamp(34px,8.4vw,54px)}
+ .hero-summary{font-size:18px;line-height:1.4;max-width:390px}
  .hero-actions{margin-top:20px;gap:14px}
+}
+@media(max-width:370px){
+ .hero-content h1{font-size:23px}
+ .hero-content h1 em{font-size:31px}
 }
 
 /* Stack process steps and client work on mobile. */
