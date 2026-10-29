@@ -1502,3 +1502,38 @@ h1,h2,h3,h4,p,figure {
   }
 
 }
+
+/* Match the Home page's aqua "View Website" action across Case Studies. */
+.cv-button,
+.hero-actions .button,
+.hero-actions .text-link,
+.store-image .image-corner,
+.store-info .arrow-link,
+.closing-actions .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: #a9eaf0;
+  color: #073d4b;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-decoration: none;
+}
+
+.cv-button:hover,
+.hero-actions .button:hover,
+.hero-actions .text-link:hover,
+.store-image:hover .image-corner,
+.store-info .arrow-link:hover,
+.closing-actions .button:hover {
+  background: #d7fbfc;
+  color: #073d4b;
+}

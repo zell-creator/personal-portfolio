@@ -1,6 +1,6 @@
 /* Shared action and section-subtitle sizes for every portfolio page. */
 :root {
-  --action-label-size: 12px;
+  --action-label-size: 14px;
   --section-subtitle-size: 16px;
 }
 
@@ -18,7 +18,8 @@
 .website-tab-name,
 .website-item.is-active .website-tab-name,
 .website-tab-description,
-.website-tab-number {
+.website-tab-number,
+.store-type {
   font-size: var(--action-label-size);
 }
 
