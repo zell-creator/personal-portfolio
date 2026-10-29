@@ -2,9 +2,27 @@
 
 A responsive, dependency-free HTML/CSS/JavaScript portfolio based on the supplied reference. The website is in `dist/`; it can be served by any static web server. No build or package installation is required.
 
+## Quick editing guide
+
+Everything that appears on the site is editable in `dist/`. Open these files in a code editor; there is no build step.
+
+| What you want to change | File to edit |
+| --- | --- |
+| Home page wording and section order | `dist/index.html` |
+| Case studies page wording and section order | `dist/case-studies.html` |
+| Home page colors, spacing, and layout | `dist/styles.css` |
+| Case studies page colors, spacing, and layout | `dist/case-studies.css` |
+| Button and small heading text sizes shared by both pages | `dist/text-sizes.css` |
+| Font files and font definitions | `dist/fonts.css` and `dist/assets/fonts/` |
+| Featured projects and live website entries | `dist/portfolio-data.js` |
+| Carousel and lightbox behavior | `dist/app.js` |
+| Case-study product image viewer | `dist/case-studies.js` |
+
+For a text change, edit the words in the HTML file or the project entry in `portfolio-data.js`. For a visual change, search the CSS file for the matching class name (for example, `.hero-content` or `.featured-copy`). The CSS rules near the end of `case-studies.css` contain the latest hero, typography, and mobile adjustments; start there for those changes. Keep image paths relative to `dist/`.
+
 ## Preview locally
 
-From this folder: `python3 -m http.server 5173 --directory dist`
+From this folder: `python3 -m http.server 5173 --bind 127.0.0.1 --directory dist`
 
 Then open http://localhost:5173.
 
