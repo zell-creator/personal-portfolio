@@ -1519,6 +1519,10 @@ body.lightbox-open {
   align-items: center;
   justify-content: center;
   min-height: 44px;
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
 .round-button {

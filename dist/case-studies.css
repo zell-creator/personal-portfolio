@@ -1527,11 +1527,25 @@ h1,h2,h3,h4,p,figure {
   text-decoration: none;
 }
 
+.cv-button {
+  min-height: 44px;
+  padding: 11px 25px;
+  border: 2px solid #b9eff3;
+  background: transparent;
+  color: #fff;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
 .cv-button:hover,
 .hero-actions .button:hover,
 .hero-actions .text-link:hover,
 .store-info .arrow-link:hover,
 .closing-actions .button:hover {
   background: #d7fbfc;
+  color: #073d4b;
+}
+
+.cv-button:hover {
+  background: #b9eff3;
   color: #073d4b;
 }
