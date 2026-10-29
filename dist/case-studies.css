@@ -1507,7 +1507,6 @@ h1,h2,h3,h4,p,figure {
 .cv-button,
 .hero-actions .button,
 .hero-actions .text-link,
-.store-image .image-corner,
 .store-info .arrow-link,
 .closing-actions .button {
   display: inline-flex;
@@ -1531,7 +1530,6 @@ h1,h2,h3,h4,p,figure {
 .cv-button:hover,
 .hero-actions .button:hover,
 .hero-actions .text-link:hover,
-.store-image:hover .image-corner,
 .store-info .arrow-link:hover,
 .closing-actions .button:hover {
   background: #d7fbfc;
