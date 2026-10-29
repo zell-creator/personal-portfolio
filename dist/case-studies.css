@@ -68,6 +68,9 @@
 .hero-content h1 em{font-size:clamp(42px,6.05vw,70px)}
 .hero-summary{margin-top:16px;font-size:clamp(18px,2.4vw,27px);line-height:1.2}
 .hero-actions{margin-top:22px}
+/* Use capitals throughout the hero, keeping the highlighted description in sentence case. */
+.case-header nav a,.hero-content h1,.hero-content .eyebrow,.hero-actions a{text-transform:uppercase}
+.hero-summary{text-transform:none}
 @media(max-width:640px){
  .case-hero{height:auto;min-height:0;background-position:60% center}
  .case-header{padding-top:24px}
