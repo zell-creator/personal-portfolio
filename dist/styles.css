@@ -277,6 +277,12 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   height: 64%;
 }
 
+.service-icon img {
+  width: 64%;
+  height: 64%;
+  object-fit: contain;
+}
+
 .service h2 {
   font-family: Roboto,Arial,sans-serif;
   font-weight: 500;
