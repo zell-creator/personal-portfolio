@@ -1,0 +1,53 @@
+/* Shared action and section-subtitle sizes for every portfolio page. */
+:root {
+  --action-label-size: 14px;
+  --section-subtitle-size: 16px;
+}
+
+.cv-button,
+.case-study-link,
+.button,
+.text-link,
+.arrow-link,
+.image-corner,
+.nav-back,
+.section-nav a,
+.website-item-details a,
+.project-caption,
+#lightbox-live,
+.website-tab-name,
+.website-item.is-active .website-tab-name,
+.website-tab-description,
+.website-tab-number,
+.store-type {
+  font-size: var(--action-label-size);
+}
+
+.eyebrow,
+.latest .latest-heading .eyebrow,
+.section-heading .eyebrow,
+.closing .eyebrow,
+.story-label p,
+.solution-card .eyebrow,
+.results-card .eyebrow {
+  font-size: var(--section-subtitle-size);
+  white-space: normal;
+}
+
+.story-label {
+  align-items: center;
+}
+
+.story-label p {
+  padding-top: 0;
+  line-height: 1.2;
+}
+
+/* Client-product card captions retain readable sizes on desktop and mobile. */
+.product-card figcaption span {
+  font-size: 13px;
+}
+
+.product-card figcaption strong {
+  font-size: 14px;
+}
