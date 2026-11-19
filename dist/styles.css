@@ -309,7 +309,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
 .featured-layout {
   display: grid;
   grid-template-columns: 29.5% minmax(0,1fr);
-  gap: 40px;
+  gap: 46px;
   align-items: start;
 }
 
@@ -352,10 +352,33 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   margin-left: 5px;
 }
 
+.featured-carousel {
+  position: relative;
+  min-width: 0;
+  --carousel-arrow-gap: 6px;
+}
+
 .carousel-controls {
+  position: absolute;
+  inset: 0;
   display: flex;
-  gap: 18px;
-  margin-top: 25px;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.carousel-controls .round-button {
+  pointer-events: auto;
+}
+
+.carousel-controls #previous-projects {
+  right: calc(100% + var(--carousel-arrow-gap));
+  position: absolute;
+}
+
+.carousel-controls #next-projects {
+  left: calc(100% + var(--carousel-arrow-gap));
+  position: absolute;
 }
 
 .round-button {
@@ -930,7 +953,7 @@ body.lightbox-open {
   }
 
   .featured-layout {
-    gap: 34px;
+    gap: 42px;
     grid-template-columns: 30% minmax(0,1fr);
   }
 
@@ -953,11 +976,6 @@ body.lightbox-open {
 
   .featured-copy>p:not(.eyebrow) {
     line-height: 1.5;
-  }
-
-  .carousel-controls {
-    margin-top: 22px;
-    gap: 15px;
   }
 
   .round-button {
@@ -1192,9 +1210,18 @@ body.lightbox-open {
     margin-left: 0;
   }
 
-  .carousel-controls {
-    gap: 13px;
-    margin-top: 22px;
+  .featured-carousel {
+    /* Reserve space for the 44px controls on narrow screens. */
+    margin-inline: -12px;
+    padding-inline: 50px;
+  }
+
+  .carousel-controls #previous-projects {
+    inset-inline: 0 auto;
+  }
+
+  .carousel-controls #next-projects {
+    inset-inline: auto 0;
   }
 
   .round-button {
