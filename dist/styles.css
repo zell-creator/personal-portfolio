@@ -560,10 +560,9 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
 
 .experience {
   color: #fff;
-  background-color: #012b3b;
-  background-image: linear-gradient(90deg,#001c281a,#001c2844),url('assets/backgrounds/ocean-original.webp');
-  background-position: center top;
-  background-size: cover;
+  background:
+    radial-gradient(ellipse at 23% 100%, #12505c, transparent 54%),
+    linear-gradient(135deg, #071e2b, #092d3d);
   padding-block: clamp(38px,5vw,58px) clamp(54px,7vw,79px);
 }
 
@@ -585,10 +584,81 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   margin-bottom: 24px;
 }
 
-.experience-copy>p:not(.eyebrow) {
-  font-size: clamp(18px,2.5vw,27px);
-  line-height: 1.12;
-  max-width: 446px;
+.experience-workflow {
+  --workflow-icon-size: clamp(42px, 5.2vw, 64px);
+  --workflow-padding: clamp(14px, 2vw, 22px);
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: var(--workflow-padding) 6px;
+  list-style: none;
+  text-align: center;
+  border: 1px solid #7dbbc45c;
+  border-radius: 16px;
+  background: #0c3141;
+  box-shadow: 0 12px 26px #00101b55;
+}
+
+.experience-workflow::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--workflow-padding) + var(--workflow-icon-size) / 2);
+  inset-inline: 17%;
+  height: 1px;
+  background: linear-gradient(90deg, #6baab3, #a6e7df);
+}
+
+.experience-workflow li {
+  position: relative;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 4px;
+  padding-inline: 2px;
+}
+
+.workflow-icon {
+  display: grid;
+  place-items: center;
+  width: var(--workflow-icon-size);
+  height: var(--workflow-icon-size);
+  margin-bottom: 5px;
+  border: 1px solid #84c8d0;
+  border-radius: 16px;
+  background: #194c5e;
+  color: #daf7fb;
+}
+
+.workflow-icon svg {
+  width: 46%;
+  height: 46%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.experience-workflow li:nth-child(2) .workflow-icon {
+  background: #225d68;
+}
+
+.experience-workflow li:last-child .workflow-icon {
+  background: #bce9eb;
+  color: #103545;
+}
+
+.experience-workflow strong {
+  font-size: clamp(15px, 1.75vw, 22px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.workflow-detail {
+  color: #c5e2e7;
+  font-size: clamp(11px, 1.2vw, 15px);
+  line-height: 1.4;
 }
 
 .timeline {
@@ -1042,10 +1112,6 @@ body.lightbox-open {
     font-size: 17px;
   }
 
-  .experience-copy>p:not(.eyebrow) {
-    font-size: 20px;
-  }
-
   .platforms li {
     padding-inline: 15px;
   }
@@ -1284,8 +1350,6 @@ body.lightbox-open {
 
   .experience {
     padding-block: 42px 57px;
-    background-position: center top;
-    background-image: linear-gradient(#01243288,#01243288),url('assets/backgrounds/ocean-original.webp');
   }
 
   .experience-layout {
@@ -1297,12 +1361,6 @@ body.lightbox-open {
     font-size: 31px;
     line-height: 1.23;
     margin-bottom: 23px;
-  }
-
-  .experience-copy>p:not(.eyebrow) {
-    font-size: 20px;
-    line-height: 1.35;
-    max-width: 470px;
   }
 
   .experience-copy .eyebrow {
