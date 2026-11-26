@@ -686,6 +686,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   width: 46px;
   height: 43px;
   background: url('assets/icons/arrow.svg') center/70% 70% no-repeat;
+  transform: translateX(20px);
   margin-top: 4px;
   align-self: start;
 }
