@@ -235,10 +235,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   max-width: 650px;
 }
 
-.services {
-  background: #e9fafb url('assets/backgrounds/aqua-original.webp') center/cover;
-}
-
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -482,6 +478,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   transform: translateY(0);
 }
 
+.services,
 .latest,
 .testimonials {
   background: radial-gradient(ellipse at 1% 80%,#7ed7e48c,transparent 47%),linear-gradient(120deg,#ebfbfd,#e0f5f7);
