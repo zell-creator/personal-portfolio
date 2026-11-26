@@ -410,54 +410,55 @@
   if (!carousel) return;
 
   const cards = Array.from(carousel.querySelectorAll('.testimonial-card'));
+  const container = carousel.querySelector('.testimonial-cards');
   const controls = carousel.querySelector('.testimonial-controls');
   const status = carousel.querySelector('.testimonial-position');
   const mobile = window.matchMedia('(max-width: 700px)');
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let first = 0;
+  let timer;
 
-  function render() {
+  function render(direction = 0) {
     const count = mobile.matches ? 1 : 2;
     const visibleCards = Array.from({ length: count }, (_, offset) => cards[(first + offset) % cards.length]);
     cards.forEach(card => { card.hidden = !visibleCards.includes(card); });
-    carousel.querySelector('.testimonial-cards').append(...visibleCards);
+    container.append(...visibleCards);
     status.textContent = `${first + 1} of ${cards.length}`;
+
+    if (direction && !motion.matches) {
+      visibleCards.forEach(card => {
+        card.getAnimations().forEach(animation => animation.cancel());
+        card.animate(
+          [{ opacity: 0, transform: `translateX(${direction * 24}px)` }, { opacity: 1, transform: 'translateX(0)' }],
+          { duration: 450, easing: 'ease-out' }
+        );
+      });
+    }
   }
 
-  controls.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', () => {
-      first = (first + Number(button.dataset.step) + cards.length) % cards.length;
-      render();
-    });
-  });
-
-  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const autoplay = controls.querySelector('.testimonial-autoplay');
-  let playing = !motion.matches;
-  let timer;
+  function advance(direction) {
+    first = (first + direction + cards.length) % cards.length;
+    render(direction);
+  }
 
   function schedule() {
     clearInterval(timer);
-    autoplay.textContent = playing ? 'Pause automatic slides' : 'Play automatic slides';
-    if (playing) {
+    if (!motion.matches) {
       timer = setInterval(() => {
         if (document.hidden || carousel.matches(':hover') || carousel.contains(document.activeElement)) return;
-        first = (first + 1) % cards.length;
-        render();
+        advance(1);
       }, 8000);
     }
   }
 
-  autoplay.addEventListener('click', () => {
-    playing = !playing;
-    schedule();
-  });
-  motion.addEventListener('change', () => {
-    if (motion.matches) {
-      playing = false;
+  controls.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', () => {
+      advance(Number(button.dataset.step));
       schedule();
-    }
+    });
   });
-  mobile.addEventListener('change', render);
+  motion.addEventListener('change', schedule);
+  mobile.addEventListener('change', () => render());
   render();
   controls.hidden = false;
   schedule();
