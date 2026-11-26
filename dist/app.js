@@ -430,7 +430,35 @@
     });
   });
 
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const autoplay = controls.querySelector('.testimonial-autoplay');
+  let playing = !motion.matches;
+  let timer;
+
+  function schedule() {
+    clearInterval(timer);
+    autoplay.textContent = playing ? 'Pause automatic slides' : 'Play automatic slides';
+    if (playing) {
+      timer = setInterval(() => {
+        if (document.hidden || carousel.matches(':hover') || carousel.contains(document.activeElement)) return;
+        first = (first + 1) % cards.length;
+        render();
+      }, 8000);
+    }
+  }
+
+  autoplay.addEventListener('click', () => {
+    playing = !playing;
+    schedule();
+  });
+  motion.addEventListener('change', () => {
+    if (motion.matches) {
+      playing = false;
+      schedule();
+    }
+  });
   mobile.addEventListener('change', render);
   render();
   controls.hidden = false;
+  schedule();
 })();

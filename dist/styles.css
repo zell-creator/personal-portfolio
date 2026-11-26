@@ -2317,3 +2317,17 @@ body.lightbox-open {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.testimonial-autoplay {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #124c58;
+  border-radius: 999px;
+  background: transparent;
+  color: #124c58;
+  font-size: 14px;
+}
+
+.testimonial-controls {
+  flex-wrap: wrap;
+}
