@@ -269,18 +269,18 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: #104b54;
+  color: #124c58;
 }
 
-.service-icon svg {
+.service-icon svg,
+.service-icon-palette {
   width: 64%;
   height: 64%;
 }
 
-.service-icon img {
-  width: 64%;
-  height: 64%;
-  object-fit: contain;
+.service-icon-palette {
+  background-color: currentColor;
+  mask: url("assets/icons/web-design-palette.png") center / contain no-repeat;
 }
 
 .service h2 {
@@ -482,8 +482,12 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   transform: translateY(0);
 }
 
-.latest {
+.latest,
+.testimonials {
   background: radial-gradient(ellipse at 1% 80%,#7ed7e48c,transparent 47%),linear-gradient(120deg,#ebfbfd,#e0f5f7);
+}
+
+.latest {
   padding-block: clamp(49px,6.3vw,72px) clamp(51px,6.4vw,74px);
 }
 
@@ -2231,17 +2235,18 @@ body.lightbox-open {
 /* LinkedIn recommendations */
 .testimonials {
   padding-block: clamp(48px, 6vw, 80px);
-  background: linear-gradient(145deg, #d7f3f5, #f3fafb 74%);
   text-align: center;
 }
 
 .testimonials-label {
+  color: #124c58;
   margin: 0 0 8px;
   font: 700 14px/1.4 Roboto, Arial, sans-serif;
   letter-spacing: .12em;
 }
 
 .testimonials h2 {
+  text-transform: uppercase;
   margin: 0;
   font: 700 clamp(28px, 4vw, 42px)/1.15 Roboto, Arial, sans-serif;
 }
