@@ -690,7 +690,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
 }
 
 .site-footer .name {
-  font-size: clamp(20px,2.6vw,28px);
+  font-size: 23px;
 }
 
 .site-footer .profession {
