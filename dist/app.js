@@ -459,7 +459,7 @@
   });
   motion.addEventListener('change', schedule);
   mobile.addEventListener('change', () => render());
-  render();
+  render(1);
   controls.hidden = false;
   schedule();
 })();
