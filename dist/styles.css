@@ -595,6 +595,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   border-radius: 16px;
   background: #0c3141;
   box-shadow: 0 12px 26px #00101b55;
+  transform: translateY(20px) scale(0.9);
+  transform-origin: top left;
 }
 
 .experience-workflow::before {
