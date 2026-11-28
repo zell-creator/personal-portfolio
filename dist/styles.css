@@ -241,11 +241,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   text-align: center;
 }
 
-.strengths h2 {
-  margin-bottom: clamp(32px, 4.5vw, 56px);
-  font: 700 clamp(31px, 4.05vw, 44px)/1.22 Roboto, Arial, sans-serif;
-}
-
 .strengths-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -285,7 +280,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
 
 .strength h3 {
   margin-bottom: 20px;
-  font: 700 clamp(17px, 2.4vw, 25px)/1.25 Roboto, Arial, sans-serif;
+  font: 700 clamp(14px, 1.75vw, 19px)/1.25 Roboto, Arial, sans-serif;
   text-transform: uppercase;
 }
 
@@ -307,16 +302,12 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
 }
 
 @media (max-width: 700px) {
-  .strengths h2 {
-    font-size: 31px;
-  }
-
   .strength {
     padding: 12px 8px;
   }
 
   .strength h3 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .strength-description {
