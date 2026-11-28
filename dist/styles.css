@@ -1134,7 +1134,7 @@ body.lightbox-open {
   }
 
   .hero-shell {
-    min-height: 515px;
+    min-height: 0;
     background-size: cover;
     background-position: center;
   }
@@ -1178,7 +1178,7 @@ body.lightbox-open {
 
   .hero {
     padding-top: 170px;
-    padding-bottom: 35px;
+    padding-bottom: 75px;
   }
 
   .hero-lead {
