@@ -1,38 +1,44 @@
-// Reveal each experience total once it scrolls into view.
+// Count visible totals once, sharing a single animation loop.
 (() => {
   'use strict';
 
-  const numbers = document.querySelectorAll('.strength-number');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const numbers = document.querySelectorAll('.strength-number');
   if (!numbers.length || motion.matches || !('IntersectionObserver' in window)) return;
+
+  const active = new Map();
+  let frame = null;
+  let lastUpdate = 0;
+
+  function update(timestamp) {
+    frame = null;
+    if (timestamp - lastUpdate >= 40 || motion.matches || document.hidden) {
+      lastUpdate = timestamp;
+      active.forEach((counter, element) => {
+        const progress = motion.matches || document.hidden
+          ? 1
+          : Math.min((timestamp - counter.started) / 1200, 1);
+        const value = Math.round(counter.target * (1 - Math.pow(1 - progress, 3))) + '+';
+        if (element.textContent !== value) element.textContent = value;
+        if (progress === 1) active.delete(element);
+      });
+    }
+    if (active.size) frame = requestAnimationFrame(update);
+  }
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      observer.unobserve(entry.target);
-
       const element = entry.target;
-      const target = Number(element.dataset.countTarget);
-      const duration = 1400;
-      let started;
-
-      function count(timestamp) {
-        if (started === undefined) started = timestamp;
-        const progress = motion.matches ? 1 : Math.min((timestamp - started) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        element.textContent = Math.round(target * eased) + '+';
-        if (progress < 1) requestAnimationFrame(count);
-      }
-
-      requestAnimationFrame(count);
+      observer.unobserve(element);
+      if (motion.matches) return;
+      const label = element.textContent.trim();
+      element.setAttribute('aria-label', label);
+      active.set(element, { target: Number(label.replace('+', '')), started: performance.now() });
+      element.textContent = '0+';
     });
+    if (active.size && frame === null) frame = requestAnimationFrame(update);
   }, { threshold: 0.5 });
 
-  numbers.forEach(element => {
-    const label = element.textContent.trim();
-    element.setAttribute('aria-label', label);
-    element.dataset.countTarget = label.replace('+', '');
-    element.textContent = '0+';
-    observer.observe(element);
-  });
+  numbers.forEach(element => observer.observe(element));
 })();

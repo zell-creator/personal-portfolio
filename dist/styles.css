@@ -273,6 +273,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
 }
 
 .strength-number {
+  font-variant-numeric: tabular-nums;
   margin-bottom: 24px;
   color: #124c58;
   font: 700 clamp(48px, 5.8vw, 70px)/1 Roboto, Arial, sans-serif;
