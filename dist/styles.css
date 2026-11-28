@@ -994,6 +994,26 @@ body.lightbox-open {
 
 }
 
+@media(max-width:1032px) and (min-width:1001px) {
+  .hero-shell {
+    background-position: 75% center;
+  }
+
+  .hero h1,
+  .hero-intro {
+    max-width: 54%;
+  }
+
+  .hero-lead {
+    font-size: clamp(27px, 3.9vw, 39px);
+  }
+
+  .hero-emphasis {
+    font-size: clamp(35px, 5vw, 50px);
+  }
+
+}
+
 @media(max-width:1000px) and (min-width:701px) {
   .hero-shell {
     background-position: 75% center;
