@@ -559,7 +559,8 @@ h1,h2,h3,h4,p,figure {
 
 .print-section {
   padding: 88px 0 96px;
-  background: #022f3b;
+  background: radial-gradient(ellipse at 77% 100%, #12505c, transparent 54%),
+    linear-gradient(225deg, #071e2b, #092d3d);
   color: #fff;
 }
 
