@@ -1141,8 +1141,9 @@ body.lightbox-open {
 
   .site-header {
     padding-top: 54px;
-    gap: 13px;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .name {
@@ -1150,14 +1151,14 @@ body.lightbox-open {
   }
 
   .profession {
-    max-width: 220px;
+    max-width: 100%;
     font-size: 10px;
     line-height: 1.4;
     margin-top: 7px;
   }
 
   .header-actions {
-    gap: 3px;
+    gap: 12px;
   }
 
   .cv-button {
@@ -1177,7 +1178,7 @@ body.lightbox-open {
   }
 
   .hero {
-    padding-top: 190px;
+    padding-top: 245px;
     padding-bottom: 75px;
   }
 
@@ -1495,12 +1496,8 @@ body.lightbox-open {
     flex-wrap: wrap;
   }
 
-  .header-actions {
-    margin-left: auto;
-  }
-
   .hero {
-    padding-top: 192px;
+    padding-top: 255px;
   }
 
   .hero-emphasis {
